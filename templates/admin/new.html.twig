@@ -1,0 +1,14 @@
+{% extends 'adminTemplate/baseAdmin.html.twig' %}
+
+{% block title %}Nouvel Admin{% endblock %}
+
+{% block body %}
+    <h1>Création d'un nouvel Admin</h1>
+
+    {{ include('admin/_form.html.twig') }}
+    <br>
+    <a href="{{ path('admin_list') }}" class="btn btn-default btn-xs">
+        <i class="fa fa-list-alt"></i>
+        Retour à liste des admins
+    </a>
+{% endblock %}

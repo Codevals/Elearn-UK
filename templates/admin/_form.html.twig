@@ -1,0 +1,27 @@
+{{ form_start(form) }}
+<div class="row">
+    <div class="col-md-5">{{ form_row(form.nom) }}</div>
+</div>
+<div class="row">
+    <div class="col-md-5">{{ form_row(form.prenom) }}</div>
+</div>
+<div class="row">
+    <div class="col-md-5">{{ form_row(form.contactCel) }}</div>
+</div>
+<div class="row">
+    <div class="col-md-5">{{ form_row(form.contactMail) }}</div>
+</div>
+<div class="row">
+    <div class="col-md-5">{{ form_row(form.username) }}</div>
+</div>
+<div class="row">
+    <div class="col-md-5">{{ form_row(form.password) }}</div>
+</div>
+<div class="row">
+    <div class="col-md-5">{{ form_row(form.type) }}</div>
+</div>
+<div class="row">
+    <div class="col-md-5">{{ form_row(form.role) }}</div>
+</div>
+<button class="btn btn-success">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

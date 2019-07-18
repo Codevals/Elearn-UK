@@ -1,0 +1,57 @@
+{% extends 'adminTemplate/baseAdmin.html.twig' %}
+
+{% block title %}Admin index{% endblock %}
+
+{% block body %}
+    <h1>Admin index</h1>
+
+    <table class="table table-responsive table-bordered table-condensed table-hover">
+        <thead>
+        <tr>
+            <th>N°</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>N°Cel</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Profil</th>
+            <th>Type</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for admin in admins %}
+            <tr>
+                <td>{{ admin.id }}</td>
+                <td>{{ admin.nom }}</td>
+                <td>{{ admin.prenom }}</td>
+                <td>{{ admin.contactCel }}</td>
+                <td>{{ admin.contactMail }}</td>
+                <td>{{ admin.username }}</td>
+                <td>{{ admin.role.slug }}</td>
+                <td>{{ admin.type }}</td>
+                <td>
+                    <a class="btn btn-xs btn-info" href="{{ path('admin_show', {'id': admin.id}) }}">
+                        <i class="fa fa-eye red"></i>
+                        Voir
+                    </a>
+                    <a class="btn btn-xs btn-warning" href="{{ path('admin_edit', {'id': admin.id}) }}">
+                        <i class="fa fa-edit"></i>
+                        Modifier
+                    </a>
+                    {{ include('admin/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_new') }}" class="btn btn-primary btn-xs">
+        <i class="fa fa-edit"></i>
+        Créer un nouvel admin
+    </a>
+{% endblock %}

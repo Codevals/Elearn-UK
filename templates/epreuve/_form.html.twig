@@ -1,0 +1,19 @@
+{{ form_start(form) }}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                {{ form_row(form.titre) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_row(form.documentFile) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <button class="btn btn-success">
+                <i class="fa fa-database"> </i>
+                {{ button_label|default('Enregistrer') }}
+            </button>
+        </div><br><br>
+    </div>
+{{ form_end(form) }}

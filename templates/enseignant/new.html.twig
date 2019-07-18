@@ -1,0 +1,14 @@
+{% extends 'adminTemplate/baseAdmin.html.twig' %}
+
+{% block title %}Nouvel Enseignant{% endblock %}
+
+{% block body %}
+    <h1>Création d'un nouvel Enseignant</h1>
+
+    {{ include('enseignant/_form.html.twig') }}
+    <br>
+    <a href="{{ path('enseignant_index') }}" class="btn btn-default btn-xs">
+        <i class="fa fa-list-alt"></i>
+        Retour à liste des enseignants
+    </a>
+{% endblock %}

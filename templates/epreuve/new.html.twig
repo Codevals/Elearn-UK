@@ -1,0 +1,14 @@
+{% extends 'adminTemplate/baseAdmin.html.twig' %}
+
+{% block title %}New Epreuve{% endblock %}
+
+{% block body %}
+    <h1>Create new Epreuve</h1>
+
+    {{ include('epreuve/_form.html.twig') }}
+    <a href="{{ path('epreuve_index') }}"class="btn btn-default btn-xs mt-2">
+        <i class="fa fa-list-alt"></i>
+        Retour à liste des épreuves
+    </a>
+
+{% endblock %}

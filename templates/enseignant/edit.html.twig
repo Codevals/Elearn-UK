@@ -1,0 +1,16 @@
+{% extends 'adminTemplate/baseAdmin.html.twig' %}
+
+{% block title %}Edit Enseignant{% endblock %}
+
+{% block body %}
+    <h1>Edit Enseignant</h1>
+
+    {{ include('enseignant/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a href="{{ path('enseignant_index') }}" class="btn btn-default btn-xs">
+        <i class="fa fa-list-alt"></i>
+        Retour à la liste des Enseignants
+    </a>
+
+    {{ include('enseignant/_delete_form.html.twig') }}
+{% endblock %}

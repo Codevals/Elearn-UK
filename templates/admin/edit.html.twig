@@ -1,0 +1,17 @@
+{% extends 'adminTemplate/baseAdmin.html.twig' %}
+
+{% block title %}Edit Admin{% endblock %}
+
+{% block body %}
+    <h1>Edit Admin</h1>
+
+    {{ include('admin/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <br>
+    <a href="{{ path('admin_list') }}" class="btn btn-default btn-xs">
+        <i class="fa fa-list-alt"></i>
+        Retour à la liste des admins
+    </a>
+
+    {{ include('admin/_delete_form.html.twig') }}
+{% endblock %}
