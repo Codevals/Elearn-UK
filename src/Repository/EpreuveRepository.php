@@ -19,6 +19,17 @@ class EpreuveRepository extends ServiceEntityRepository
         parent::__construct($registry, Epreuve::class);
     }
 
+    /**
+     * @return \Doctrine\ORM\Query, pour retourner les dernière epreuves uploader
+     */
+    public function findLatest()
+    {
+        return $this->createQueryBuilder('e')
+            ->orderBy('e.id', 'ASC')
+            ->getQuery()
+            ;
+    }
+
     // /**
     //  * @return Epreuve[] Returns an array of Epreuve objects
     //  */

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<title>Etablissement</title>
+
+{% block body %}
+    <h1>Etablissement</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ etablissement.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ etablissement.libelle }}</td>
+            </tr>
+            <tr>
+                <th>LibelleCourt</th>
+                <td>{{ etablissement.libelleCourt }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('etablissement_index') }}">back to list</a>
+
+    <a href="{{ path('etablissement_edit', {'id': etablissement.id}) }}">edit</a>
+
+    {{ include('etablissement/_delete_form.html.twig') }}
+{% endblock %}

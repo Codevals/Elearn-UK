@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Cours;
 use App\Entity\Enseignant;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
@@ -18,6 +19,24 @@ class EnseignantRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Enseignant::class);
     }
+
+    /**
+     * @param $enseignant
+     * @return Enseignant|null, Retourne la liste des cours d'un enseignant
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+
+    public function findByEnseignantCours(Enseignant $enseignant): ?Enseignant
+    {
+        return $this->createQueryBuilder('e')
+            ->andWhere('e.id = :val')
+            ->setParameter('val', $enseignant)
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+
 
     // /**
     //  * @return Enseignant[] Returns an array of Enseignant objects

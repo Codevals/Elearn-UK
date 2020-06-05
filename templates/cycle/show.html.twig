@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cycle{% endblock %}
+
+{% block body %}
+    <h1>Cycle</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cycle.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ cycle.libelle }}</td>
+            </tr>
+            <tr>
+                <th>LibelleCourt</th>
+                <td>{{ cycle.libelleCourt }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('cycle_index') }}">back to list</a>
+
+    <a href="{{ path('cycle_edit', {'id': cycle.id}) }}">edit</a>
+
+    {{ include('cycle/_delete_form.html.twig') }}
+{% endblock %}

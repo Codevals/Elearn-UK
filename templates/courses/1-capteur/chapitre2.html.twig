@@ -1,0 +1,640 @@
+{% extends 'baseCourse.html.twig' %}
+
+{% block title %}
+    Chapitre {{ chapter.numero }}: {{ chapter.titre }}
+{% endblock %}
+
+{% block courseTitle %}
+    Chapitre {{ chapter.numero }}: {{ chapter.titre }}
+{% endblock %}
+
+{% block video %}
+    <img style="height: 200px; width: 100%; display: block;"
+         src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+         alt="Card image">
+    <hr>
+{% endblock %}
+
+{% block courseContent %}
+    <div>
+        <div style="text-align: justify">
+            On distingue deux types de capteurs suivant la nature de la sortie s. Si s est une charge, une tension ou un courant alors le capteur est vu de sa sortie comme un générateur et on parle de capteur actif. Par contre, si s est une résistance, une inductance
+            ou une capacité alors le capteur est vu de sa sortie comme une impédance et le capteur est alors dit passif. <br><br> Objectifs spécifiques : identifier chacun des deux types
+            de capteurs et arriver à décrire leur principe physique de fonctionnement; connaître le principe d’étalonnage.
+        </div>
+    </div>
+    <br>
+    <div>
+        <h3>2.1 Capteurs actifs</h3> <br>
+        <div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Mesurande</th>
+                    <th scope="col">Effet Utilisé</th>
+                    <th scope="col">Grandeur de sortie</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Température</td>
+                    <td>Thermoélectricité</td>
+                    <td>Tension</td>
+                </tr>
+                <tr>
+                    <td>Flux de rayonnement optique</td>
+                    <td>Pyroélectricité <br> Photoémession effet photovoltaîque effet Photoélectromagnétique
+                    </td>
+                    <td>Charge courant Tension Tension
+                    </td>
+                </tr>
+                <tr>
+                    <td>Force <br> Pression <br> accélération
+                    </td>
+                    <td>Piézoélectricité</td>
+                    <td>Charge</td>
+                </tr>
+                <tr>
+                    <td>Vitesse
+                    </td>
+                    <td>Induction électromagnétique</td>
+                    <td>Tension</td>
+                </tr>
+                <tr>
+                    <td>Position (aimant)
+                    </td>
+                    <td>Effet Hall</td>
+                    <td>Tension</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+    </div>
+    <div>
+        <h4>2.1.1 Thermoélectricité</h4> <br>
+
+        <div style="text-align: justify">
+            L’effet thermoélectrique a été découvert par le physicien allemand Seebeck en 1821. Un circuit formé de deux conducteurs de nature chimique différente dont les jonctions sont à des températures $T_1 et T_2$ est le siège d’une force électromotrice $e(T1,T2)$.
+            <p style="text-align: justify;">Application : La connaissance de e(T1,T2) permet de déterminer par exemple T1 si T2 (0◦) est connue (figure 2.1)
+        </div>
+
+
+        <div class="text-center">
+            <img src="{{ asset('assets/courses/images/capteurs 2020/fig2.1.jpg') }}" class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption">Figure 2.1 – Effet thermoélectrique</figcaption>
+        </div>
+
+        <br>
+    </div>
+
+    <div>
+        <h4>2.1.2 Pyro-électricité</h4>
+        <br>
+        <div style="text-align: justify">
+            Les cristaux pyro-électriques ont une polarisation électrique spontanée qui dépend de leur température. Ils portent des charges électriques surfaciques qui sont proportionnelles à la polarisation et de signes contraires sur les faces opposées. <br>                                        Application :<em> un flux de rayonnement lumineux absorbé par un cristal pyroélectrique élève sa température ce qui entraîne une modification de sa polarisation qui est mesurable par la variation
+                de tension aux bornes du condensateur associé (figure 2.2).</em>
+        </div>
+        <br>
+        <div class="text-center">
+            <img src="{{ asset('assets/courses/images/capteurs 2020/fig2.2.jpg') }}" class="figure-img img-fluid rounded"
+                 alt="...">
+            <figcaption class="figure-caption">Figure 2.2 – Effet pyro-électrique</figcaption>
+        </div>
+    </div>
+    <br>
+
+    <div>
+        <h4>2.1.3 Piézo-électricité</h4>
+        <br>
+        <div style="text-align: justify">
+            L’application d’une force et plus généralement d’une contrainte mécanique à certains matériaux dits piézoélectriques, le quartz par exemple, entraîne une déformation qui suscite l’apparition de charges électriques. Les faces opposées sont assimilées á
+            un condensateur (faces opposées portent les charges égales de signes contraires). <br> Application : <em> mesure de forces ou de grandeurs s’y ramenant (pression, accélération) à partir de la tension provoquée par les variations de sa charge aux bornes du condensateur associé à l’élément piézo-électrique $(figure 2.3)$</em>.
+        </div>
+        <br>
+        <div class="text-center">
+            <img src="{{ asset('assets/courses/images/capteurs 2020/fig2.3.jpg') }}"
+                 class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption">Figure 2.3 – Effet pyézo-électrique</figcaption>
+        </div>
+    </div>
+    <br>
+    <div>
+        <h4>2.1.4 Effet d’induction électromagnétique</h4>
+        <br>
+        <div style="text-align: justify">
+            Lorsqu’un conducteur se déplace dans un champ d’induction fixe, il est le siège d’une f.é.m. proportionnelle au flux coupé par unité de temps, donc à sa vitesse de déplacement. <br> Application : <em> la mesure de la f.é.m. d’induction permet de connaître la vitesse du déplacement qui est à son origine $(figure 2.4)$.</em>
+        </div>
+        <div class="text-center">
+            <img src="{{ asset('assets/courses/images/capteurs 2020/fig2.4.jpg') }}" class="figure-img img-fluid rounded"
+                 alt="...">
+            <figcaption class="figure-caption">Figure 2.4 – Effet d’induction électromagnétique</figcaption>
+        </div>
+    </div>
+    <br>
+
+    <div>
+        <h4>2.1.5 Effets photoélectriques</h4>
+        <br>
+        <div style="text-align: justify">
+            C’est la libération de charges électriques dans la matière sous l’influence d’un rayonnement lumineux ou plus généralement électromagnétique, dont la longueur d’onde est inférieure à une valeur seuil, caractéristique du matériau (figure 2.5). Ces charges
+            libérées participeront à la conduction d’un courant électrique. <br>
+            <em>Application : le capteur de proximité infrarouge (capteur photoélectrique) se compose d’un émetteur de lumière à diode infrarouge associé à un récepteur photosensible. La détection d’un objet se fait par coupure ou variation d’un faisceau lumineux</em>
+        </div>
+
+        <div class="text-center">
+            <img src="{{ asset('assets/courses/images/capteurs 2020/fig2.5.jpg') }}" class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption">Figure 2.5 – Effets photoélectriques</figcaption>
+        </div>
+
+    </div>
+    <br>
+
+    <div>
+        <h4>2.1.6 Effet photovoltaïque</h4>
+        <br>
+        <div style="text-align: justify">
+            Des électrons et des trous sont libérés au voisinage d’une jonction de semi-conducteurs P et N illuminée; leur déplacement dans le champ électrique de la jonction modifie la tension à ses bornes. C’est en fait un des effets photoélectriques.
+        </div>
+
+        <div class="text-center">
+            <img src="{{ asset('assets/courses/images/capteurs 2020/fig2.6.jpg') }}" class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption">Figure 2.6 – Effet photovoltaïque</figcaption>
+        </div>
+
+    </div>
+    <br>
+
+    <div>
+        <h4>2.1.7 Effet Hall</h4>
+        <br>
+        <div style="text-align: justify">
+            Un matériau, généralement un barreau de semi-conducteur, soumis à un champ magnétique uniforme B et traversé par un courant I, est le siège d’une force électromotrice VH qui se crée entre ses faces.
+        </div>
+        <br>
+        <div class="text-center">
+            <img src="{{ asset('assets/courses/images/capteurs 2020/fig2.7.jpg') }}" class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption">Figure 2.7 – Effets Hall</figcaption>
+        </div>
+        <br>
+        <div style="text-align: justify">
+            Si θ est l’angle formé par I et le champ B, la tension VH apparue, dans une direction perpendiculaire à l’induction est : <br><br>
+            <span class="text-success text-center">$VH = K_H.I.B sinθ (2.1)$<br></span><br> Où $KH$ dépend du matériau et des dimensions de la plaquette.<br> Les capteurs basés sur l’effet Hall sont classés parmi les capteurs
+            actifs puisque l’information est liée à une f.é.m.; ce ne sont cependant pas des convertisseurs d’énergie car c’est la source du courant I et non le mesurande qui délivre l’énergie liée au signal. <br> Application
+            : <em> D’usages nombreux, les capteurs à
+                effet hall ; permettent de mesurer les champs magnétiques (Teslamètre), l’intensité de courant électrique (capteur de courant à effet électrique). Ils sont utilisés comme détecteurs de position sans contact, notamment
+                utilisé dans l’automobile. etc.</em>
+        </div>
+
+    </div>
+    <br>
+
+    <div>
+        <h3>2.2 Capteurs passifs</h3>
+        <br>
+        <div style="text-align: justify">
+            Il s’agit généralement d’impédances (résistance, inductance, capacité) dont l’un des paramètres déterminants est sensible à la grandeur mesurée. La variation d’impédance résulte de l’action du mesurande soit : <br>                                        - sur les caractéristiques géométriques ou dimensionnelles <br> - soit sur les propriétés électriques des matériaux (résistivité, perméabilité magnétique, constante diélectrique) Les paramètres géométriques ou dimensionnels
+            de l’impédance peuvent varier si le capteur comporte soit un élément mobile, soit un élément déformable : <br> ∗ Chaque position de l’élément mobile correspondant une à valeur de l’impédance. La mesure de celle-ci
+            permet de connaître la position; c’est le principe d’un grand nombre de capteurs de position ou de déplacement : potentiomètre, inductance à noyau mobile, condensateur à armature mobile, etc. <br> ∗ La déformation
+            résulte de forces - ou de grandeurs s’y ramenant (pression, accélération) appliquées directement ou indirectement au capteur : armature d’un condensateur soumise à une pression différentielle, jauge d’extensométrie
+            liée rigidement à une structure soumise à contrainte, etc.. La modification d’impédance qu’entraîne la déformation du capteur est liée aux efforts auxquels celui-ci ou la structure intermédiaire se trouve soumis
+            et elle en assure une traduction électrique. <br> <em> Quelsques grandeurs susceptibles de déformations sont résumés dans le tableau qui suit :</em>
+
+        </div>
+        <br>
+        <div>
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th scope="col">Grandeur de traduction</th>
+                        <th scope="col">Effet Utilisé</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Résistance R</td>
+                        <td>$R = f (ρ,l,s)$ <br> $ρ$ résistivité, l$$ longueur, s$$ section</td>
+                    </tr>
+                    <tr>
+                        <td>Capacité C</td>
+                        <td>$C = f (S,e,ε)$ <br> S surface des armatures e distance entre armatures, ε permitivité
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Inductance L
+                        </td>
+                        <td>$L = f (l,S,µ,n)$ $l$ longueur, S surface des spires µ perméabilité, n nombre de spires</td>
+                    </tr>
+                    <tr>
+                        <td>Inductance mutuelle M
+                        </td>
+                        <td>$M = f (L_1,L_2)$</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <div style="text-align: justify">
+            Les propriétés électriques des matériaux, selon la nature de ces derniers, peuvent être sensibles à des grandeurs physiques variées : température, éclairement, humidité, etc. Si l’une seule de ces grandeurs est susceptible d’évolution, toutes les autres
+            étant maintenues constantes il s’établit une correspondance univoque entre la valeur de cette grandeur et celle de l’impédance du capteur. La courbe d’étalonnage traduit cette correspondance et permet, à partir
+            de la mesure de l’impédance de déduire la valeur de la grandeur physique agissante qui est le mesurande. <br><em> Le tableau suivant donne quelques mesurandes susceptibles de modifier les propriétés électriques </em>:
+        </div>
+        <br>
+        <div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Mesurande</th>
+                    <th scope="col">Caractéristique électrique sensible</th>
+                    <th scope="col">Types de matériaux utilisés</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Température</td>
+                    <td>Résistivité électrique</td>
+                    <td>Métaux : platine, nickel, cuivre. Semi-conducteurs.</td>
+                </tr>
+                <tr>
+                    <td>Flux de rayonnement optique Déformation
+                    </td>
+                    <td>Résistivité électrique Résistivité électrique Perméabilité magnétique
+                    </td>
+                    <td>Semi-conducteurs. Alliages de nickel, silicium dopé. Alliages ferromagnétiques.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Position</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Pression</td>
+                    <td>Résistivité électrique</td>
+                    <td>Matériaux magnéto-résistants : bismuth, a ntimoniure d’indium.</td>
+                </tr>
+                <tr>
+                    <td>Humidité</td>
+                    <td>Résistivité électrique Constante diélectrique
+                    </td>
+                    <td>Chlorure de lithium. Alumine ; polymères
+                    </td>
+                </tr>
+                <tr>
+                    <td>Niveau</td>
+                    <td>Constante diélectrique</td>
+                    <td>Liquides isolants</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="text-align: justify">
+            <em> L’impédance d’un capteur et ses variations ne sont mesurables qu’en intégrant le capteur dans un circuit électrique alimenté qui constitue son conditionneur</em>. <br> C’est, en effet, l’association capteur-conditionneur
+            qui détermine le signal électrique; de la constitution du conditionneur dépendent un certain nombre de performances de l’ensemble de mesure : sensibilité, linéarité, insensibilité à certaines grandeurs d’influence.
+        </div>
+    </div>
+    <br>
+    <div>
+        <h3>2.3 Capteurs composites</h3>
+        <br>
+        <div style="text-align: justify">
+            On est souvent amené à utiliser un capteur, non pas sensible au mesurande mais à l’un de ses effets. Le corps d’épreuve est le dispositif qui, soumis au mesurande (primaire) étudié en assure une première traduction en une autre grandeur physique non-électrique,
+            le mesurande secondaire, qu’un capteur adéquat traduit alors en grandeur électrique (figure2.8). L’ensemble formé par le corps d’épreuve et le capteur actif ou passif constitue un capteur composite.
+        </div>
+        <br>
+
+        <div class="text-center">
+            <img src="{{ asset('assets/courses/images/capteurs 2020/fig2.8.jpg') }}"
+                 class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption">Figure 2.8 – Capteur composite.</figcaption>
+        </div>
+        <br>
+        <div style="text-align: justify">
+            Les corps d’épreuve sont très utilisés pour la mesure de grandeurs mécaniques celles-ci imposent au corps d’épreuve des déformations ou des déplacements auxquels un capteur approprié est sensible. <br> Exemple :
+        </div>
+
+        <div class="text-center">
+            <img src="{{ asset('assets/courses/images/capteurs 2020/fig2.9.jpg') }}" class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption">Figure 2.9 – Exemple de corps d’épreuve</figcaption>
+        </div>
+
+        <div style="text-align: justify">
+            Une traction F exercée sur une barre entraîne une déformation $Delta L/L$ qui est mesurable par la variation $DeltaR/R$ de la résistance de la jauge (figure2.9). L’équation du corps d’épreuve qui lie la traction (mesurande primaire) à la déformation (mesurande
+            secondaire) est : <br> <br> <span class="text-success"> $DeltaL/L = (1/E).(F/A)$</span> <br><br>
+            <em>E est le module d’Young de la barre <br>
+                L est la longueur de la barre <br>
+                A est la section de la barre <br>
+                L’équation du capteur liant la déformation à la variation de résistance électrique de la jauge est :
+            </em> <br><br>
+            <span class="text-success" style="text-align: center;"> $DeltaR/R = KDeltaL/L$</span>
+            <br><br> K est le facteur de jauge on en déduit la relation entre la traction et la variation de résistance : <br><br>
+            <span class="text-success" style="text-align: center;"> $DeltaR/R = K/E.F/A$</span><br><br> La relation que le corps d’épreuve établit entre les mesurandes primaire et secondaire est très souvent linéaire. Les performances
+            de l’association corps d’épreuve + capteur doivent être déterminées par un étalonnage global de l’ensemble afin de prendre en compte des modifications éventuelles que leur montage et leur liaison apportent à leurs
+            caractéristiques individuelles à vide. Par ailleurs, si l’électronique est associée, le capteur est dit <em> intégré.</em>
+        </div>
+    </div>
+    <br>
+    <div>
+        <h3>2.4 La chaine de mesure</h3>
+        <br>
+        <div style="text-align: justify;">
+            La chaîne de mesure est constituée de l’ensemble des dispositifs, y compris le capteur, rendant possible, dans les meilleures conditions, la détermination précise de la valeur du mesurande. A l’entrée de la chaîne, le capteur
+            soumis à l’action du mesurande permet, directement s’il est actif ou par le moyen de son conditionneur s’il est passif, d’injecter dans la chaîne le signal électrique, support de l’information liée au mesurande.
+            À la sortie de la chaîne, le signal électrique qu’elle a traité est converti sous une forme qui rend possible la lecture directe de la valeur cherchée du mesurande : <br>                                        — déviation d’un appareil à cadre mobile ;<br> — enregistrement analogique graphique ou oscillographique ;<br> — affichage ou impression d’un nombre. <br> L’étalonnage de toute la chaîne de mesure permet d’attribuer
+            à chaque indication en sortie la valeur correspondante du mesurande agissant à l’entrée. La chaîne de mesure peut se réduire au capteur et à son conditionneur éventuel (jauge de contrainte placée dans un pont de
+            Wheatstone, un galvanomètre ou un voltmètre) ou au capteur associé à un appareil de lecture pour les cas simples (thermocouple et voltmètre). <br>
+        </div>
+
+        <div class="text-center">
+            <img src="{{ asset('assets/courses/images/capteurs 2020/fig2.10.jpg') }}" class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption">Figure 2.10 – Chaînes de mesure contrôlée par un microprocesseur.</figcaption>
+        </div>
+
+        <div style="text-align: justify">
+            Les capteurs d’une chaîne de mesure pilotée par un microprocesseur sont dits capteurs intelligents. Le microprocesseur (calculateur) de la chaîne a pour rôle la gestion de l’acquisition d’une part; et les traitements du signal requis par la précision
+            et par la nature de l’information cherchée d’autre part.
+        </div>
+    </div>
+    <br>
+    <div>
+        <h3>2.5 Étalonnage du capteur</h3>
+        <br>
+        <div style="text-align: justify">
+            L’étalonnage du capteur comprend l’ensemble des opérations qui permettent d’expliciter sous forme graphique ou algébrique, la relation entre les valeurs du mesurande et celles de la grandeur électrique de sortie et ceci, compte tenu de tous les paramètres
+            additionnels tels que les grandeurs physiques liées au mesurande (propriétés physique du support du mesurande, sens de variation du mesurande, ...) et des grandeurs dont le capteur est sensible (température, humidité,
+            tension d’alimentation, ...); susceptibles de modifier la réponse du capteur. On en distingue deux types : l’étalonnage simple et l’étalonnage multiple. <br> Étalonnage simple
+            s’applique à un mesurande défini par une grandeur physique unique et à un capteur non sensible ou non soumis à des grandeurs d’influence. Il s’agit en particulier de mesurandes statiques, c’est-à-dire à valeurs
+            constantes. C’est l’exemple de la mesure d’une température stable à l’aide d’un thermocouple Dans la procédure, si diverses valeurs du mesurande m sont fournies par des étalons ou par des éléments de référence dont
+            la valeur est connue avec une précision largement supérieure à celle recherchée pour le capteur, alors on fait l’étalonnage direct ou absolu. Par contre, si on utilise un deuxième capteur étalonnée appelé capteur
+            de référence on parle d’étalonnage indirect ou par comparaison. Le capteur de référence et le capteur à étalonner sont soumis dans les mêmes conditions, simultanément si possible, à l’action de mesurandes identiques
+            dont le capteur de référence permet de connaître les valeurs. Les valeurs associées du mesurande et de la grandeur électrique de sortie, qui sont en nombre limité, doivent cependant permettre d’établir sans ambiguïté
+            et compte tenu de la précision des mesures, la relation entre mesurande et grandeur de sortie, soit sous forme graphique : c’est la courbe d’étalonnage ; soit sous forme algébrique : c’est l’équation caractéristique
+            du capteur. <br> Lorsque le mesurande à lui seul ne permet pas de définir la réponse du capteur, il faut que soit précisée, par une série d’étalonnages successifs l’influence de chacun des paramètres actifs additionnels.
+            On parle dans ce cas d’étalonnage multiple <br> En réalisant un étalonnage et en comparant deux instruments, il se peut qu’on trouve des différences entre eux. Ainsi, la suite logique consiste à vouloir " ajuster
+            " l’unité testée pour qu’elle effectue des mesures correctes. Ce procédé s’appelle l’ajustage ou parfois le réglage. L’étalonnage permet donc de garantir la répétabilité et l’interchangeabilité des résultats de
+            sortie d’un capteur. <br> Cependant les capteurs doivent être utilisés correctement en respectant les consignes du constructeur. Les contraintes mécaniques, thermiques ou électriques auxquelles un capteur est soumis
+            entraînent, lorsque leurs niveaux dépassent des seuils définis, une modification des caractéristiques du capteur, telles qu’elles étaient connues par étalonnage préalable ou spécifications du constructeur. <br>
+        </div>
+    </div>
+    <br>
+    <div>
+        <h3>2.6 Sensibilité</h3>
+        <br>
+        <div>
+            <h4>2.6.1 Définition</h4>
+            <br>
+            <div style="text-align: justify">
+                la sensibilité S est définie, autour d’une valeur mi constante du mesurande, par le rapport de la variation ∆s de la grandeur de sortie à la variation ∆m du mesurande qui lui a donné naissance. <br><br>
+                <span class="text-success">$S=(Delta_s/Delta_m)_(m=m_i)$</span>
+                <br><br> Elle est en générale fournie par le constructeur et permet d’estimer l’ordre de grandeur de la réponse du capteur, connaissant l’ordre de grandeur des variations du mesurande. Son unité résulte du principe
+                qui est à la base du capteur. Par exemple pour un couple thermoélectrique S est exprimée en $µV/K$. <br> La fréquence du mesurande est un paramètre succeptible d’influer sur la sensibilité. Ceci amène à distinguer
+                deux types de fonctionnement auxquels sont associées les sensibilités correspondantes : <br> • Le fonctionnement statique où le mesurande a une valeur constante ou très lentement variable (flux lumineux constant,
+                une accélération constante) <br> • Le fonctionnement dynamique où le mesurande varie rapidement (une accélération lié aux variations d’une structure) <br>
+            </div>
+        </div>
+        <br>
+        <div>
+            <h4>2.6.2 Sensibilité en régime statique</h4>
+            <br>
+            <div style="text-align: justify">
+                La définition précédente est très générale. En régime statique la sensibilité est le rapport de l’incrément ∆s à l’incrément ∆m qui le provoque. La sensibilité en régime statique est donc égale à la pente de la caractéristique statique au point de fonctionnement(figure2.11).
+                Si la caractéristique n’est pas une droite, la sensibilité dépend du point de fonctionnement. Dans le cas où la caractéristique statique est une droite passant par l’origine la sensibilité S est indépendante
+                du point de fonctionnement.
+            </div>
+        </div>
+        <br>
+        <div>
+            <h4>2.6.3 Sensibilité en régime dynamique et réponse en fréquence</h4>
+            <br>
+            <div style="text-align: justify">
+                La sensibilité en régime dynamique peut être définie lorsque le mesurande est une fonction périodique du temps; dans ces conditions la grandeur de sortie s a en régime
+            </div>
+            <br>
+            <div class="text-center">
+                <img src="{{ asset('assets/courses/images/capteurs 2020/fig2.11.jpg') }}"
+                     class="figure-img img-fluid rounded" alt="...">
+                <figcaption class="figure-caption">Figure 2.11 – sensibilité statique.</figcaption>
+            </div>
+            <br>
+            <div style="text-align: justify">
+                permanent la même périodicité que le mesurande. <br> Soit le mesurande : <br> $m(t) = m0 + m1 cosωt$
+                <br> où m0 est une valeur constante à laquelle est superposée une variation sinusoïdale d’ampli- tude m1
+                et de fréquence
+                <br> $f=omega/(2Pi)$ . <br> <br> La réponse du capteur est de la forme : <br>
+                <br> $s(t) = s_0 + s_1 cos(ωt + ψ)$ <br><br> où $s0$ est la valeur constante correspondant à $m_0$,
+                définissant le point de repos sur la courbe d’étalonnage statique; s1 est l’amplitude de variation de la
+                sortie provoquée par la partie variable du mesurande et ψ le déphasage entre les variations de la sortie
+                et de l’ entrée. La sensibilité qui, de façon générale, est le rapport des variations associées de s et
+                de m est définie dans ce cas par l’expression : <br> <br> $S=(s_1/m_1)_(Q_i)$ <br><br> $Q_i$ est le point
+                de fonctionnement. L’évolution de la sensibilité en régime dynamique est fonction de la fréquence f du
+                mesurande et déﬁnie donc la réponse en fréquence du capteur. Lorsque la variation du mesurande est
+                périodique, de période $T = 2π ω$ ,
+                on peut faire un développement en série de Fourier.
+                <br> $m(t) =m_0 + sum(m_n cos(nωt + φn))_({n=1...∞}) $ n=1<br> La grandeur de sortie est : <br>
+            </div>
+            <br>
+            <div class="text-center">
+                <img src="{{ asset('assets/courses/images/capteurs 2020/formule4.png') }}"
+                     class="figure-img img-fluid rounded" alt="...">
+            </div>
+            <br>
+            <div style="text-align: justify">
+                Cette réponse du capteur est la superposition des réponses aux différentes composantes
+                $m_n cos(nωt + φn)$. Chacune des réponses est fixée par sa sensibilité propre résultant de la réponse
+                en fréquence :
+            </div>
+            <div>
+                <span class="text-success">
+                    $S(f_n) = (s_n/mn)_(Q_i) $
+                </span>
+            </div>
+            <div style="text-align: justify">
+                avec $f_n = ((nomega)/(2pi))s_n et m_n$ sont les amplitudes maximales relatives à la nime composante
+                fréquentielle du signal. Il existe donc autant de sensibilités que de fréquences significatives du
+                spectre de m. <br>La variation de la sensibilité en fonction de la fréquence a généralement pour origine
+                l’inertie mécanique, thermique ou électricque de la tête de mesure qui l’empêche de délivrer un signal
+                qui suive instantanément les variations du mesurande et ceci d’autant plus que la fréquence est élevée.
+                Cette inertie peut être inhérente au principe physique de base du capteur, mais elle est aussi très
+                souvent due à la présence de R, L, C.
+                <br> C’est pour cette raison que l’étude de la réponse en fréquence doit être menée en considérant
+                l’ensemble formé par le capteur et les composants qui lui sont associés. L’équation qui relie les
+                variations de s à celles de m est sous sa forme la plus générale une équation différentielle qui selon
+                le cas est du premier ou du second ordre. <br> Réponse en fréquence d’un système du premier ordre
+                <br> Le système est régi par une équation différentielle de la forme : <br><br>
+                <span class="text-success">
+                    $a(ds)/dt+bs = m(t)  (2.2)$
+                </span><br><br>
+                a et b sont des constantes <br> Dans le cas d’un mesurande sinusoidal $m(t) = m_1 cos(ωt)$, la réponse
+                en régime permanent est aussi sinusoidal
+                $s(t) = s_1 cos(ωt + ψ)$ <br> En notation complexe $m(t)$ devient $m_1 expjωt$ et s(t)
+                devient $s_1 expj (ωt + ψ)$ avec $m_1$ et $s_1$ des réels On rappel que : <br> $ d/(dt) =>jomega $
+                <br> $ d^2/dt =>-omega^2 $
+                <br> L’équation diﬀérentielle peut être écrite sous forme complexe.
+                $jωas_1 expj (ωt + ψ) + bs_1 expj (ωt + ψ) = m_1 expjωt$
+                <br> $jωas_1 expjψ + bs_1 expjψ = m_1$
+                <br> $s_1 = m_1/b . ((exp−jψ)/ (1 + ((j ωa)/
+                b)) )= m_1/b . ((exp−jψ)/ (1 + ((j 2πfa) /b)))$
+                <br> en posant $f_c=b/(2pia) $ la fréquence de coupure on obtient :
+                <br> $s_1 = m_1/b . ((exp−jψ)/ (1 + ((j f_c)/ f)) )$
+                <br> On déduit que : <br> $s_1 = m1 /b
+                . (1/ sqrt(1/(f/f_c)) )$
+                <br> $ψ = −Arctg(f /f_c)$
+                <br> L’expression de la sensibilité en fonction de la fréquence est :
+                <br> $S(f) = s_1/ m_1 = 1 /b .( 1 /sqrt(1 +(f/ f_c)^2)) $ <br> Si $f −→ 0$ alors la
+                sensibilité dynamique $S (f) → 1/ b= S (0)$ la sensibilité en régime statique.
+                La figure2.12 montre l’évolution de la sensibilité en fonction de la fréquence :
+                <br> $S(f) = S(0).( 1 /sqrt(1 +(f/ f_c)^2)) $
+            </div>
+            <br>
+            <div class="text-center">
+                <img src="{{ asset('assets/courses/images/capteurs 2020/fig2.12.jpg') }}"
+                     class="figure-img img-fluid rounded" alt="...">
+                <figcaption class="figure-caption">
+                    Figure 2.12 – sensibilité et phase d’un système du 1er ordre.
+                </figcaption>
+            </div>
+            <br>
+        </div>
+    </div>
+    <div>
+        <h3>2.7 Rapidité et temps de réponse</h3>
+        <br>
+        <div style="text-align: justify">
+            La réponse en fréquence étudiée précédemment s’applique au régime permanent de la grandeur de sortie en
+            présence d’un mesurande périodique. Dès l’instant où le mesurande se trouve appliqué au capteur ou bien
+            subit une variation brusque, l’établissement du régime permanent subséquent. est précédé d’un régime
+            transitoire dont l’importance doit pouvoir être appréciée pour une réalisation correcte des mesures. La
+            rapidité est l a spécification d’un capteur qui permet d’apprécier de quelle façon la grandeur de sortie
+            suit dans le temps les variations du mesurande. La rapidité est donc liée au temps nécessaire pour que la
+            contribution du régime transitoire à la grandeur de sortie devienne négligeable dans des conditions de
+            précision définies. La grandeur utilisée pour définir quantitativement la rapidité est le temps de réponse :
+            c’est l’intervalle de temps qui s’écoule après une variation brusque du mesurande jusqu’à ce que la variation
+            de la sortie du capteur ne diffère plus de sa valeur finale d’un écart supérieur à une limite E
+            conventionnellement fixée. Un capteur est d’autant plus rapide que son temps de réponse est plus court.
+            Des intervalles de temps ont été définis pour permettre de mieux connaître le régime transitoire(figure2.13).
+        </div>
+        <br>
+        <div class="text-center">
+            <img src="{{ asset('assets/courses/images/capteurs 2020/fig2.13.jpg') }}"
+                 class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption">
+                Figure 2.13 – Intervalles de temps caractérisant le régime transitoire.
+            </figcaption>
+        </div>
+        <br>
+        <div style="text-align: justify">
+            Si un échelon de mesurande entraîne une croissance de la grandeur de sortie, on définie : <br> - le temps de
+            retard à la montée ou délai à la montée tdm : c’est le temps nécessaire pour que la grandeur de sortie
+            s croisse, à partir de sa valeur initiale, de 10 pourcent de sa variation totale ; <br> - le temps de montée
+            tm : c’est l’intervalle de temps correspondant à la croissance de 10 pourcent à 90 pourcent de la variation
+            totale pour la grandeur de sortie s. <br> Dans le cas où l’échelon du mesurande entraîne une décroissance
+            de la grandeur de sortie, on définie : <br> - le temps de retard à la chute ou délai à la chute tdc : c’est
+            le temps qu’il faut pour que la grandeur de sortie s décroisse à partir de sa valeur initiale de 10 pourcent
+            de sa variation totale ; <br> - le temps de chute tc : c’est l’intervalle de temps correspondant à la
+            décroissance de s de 10 pourcent à 90 pourcent de sa variation totale. <br> Temps de réponse d’un système
+            du premier ordre Considérons un échelon du mesurande : <br> $m(t) = {(0 si t
+            < 0),(m0 si t>= 0):}$ <br> la solution de l’équation différentielle du système : <br> $a(ds)/dt + bs = m_0$
+            <br> si $à t_0 ⇒ s = 0$, alors la solution de l’équation diﬀérentielle précédente est :
+            <br> $s(t) = s_0(1−exp(−t /τ))$
+            <br> $s_0 = m_0/ b$ est la valeur de la réponse s en régime permanent et $τ = a /b$ la constante de temps
+            du système.
+        </div>
+        <br>
+        <div class="text-center">
+            <img src="{{ asset('assets/courses/images/capteurs 2020/fig2.14.jpg') }}" class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption">Figure 2.14 – Réponse temporelle d’un système du premier ordre à un
+                échelon du mesurande.
+            </figcaption>
+        </div>
+        <br>
+        <div style="text-align: justify">
+            <br> Le temps de réponse $tr (ε)$peut être déterminé à partir de son expression mathématique dont on
+            déduit : <br> $exp((−tr (ε))/ τ )= ε /100$ <br> soit : <br> $tr (ε) = 2,3(2 − logε).τ$ <br> Calculer le temps
+            de réponse pour les valeurs suivantes de ε (en pourcentage) en fonction de τ : 10, 5, 2, 1, 0;1. On
+            constacte que le temps de réponse est proportionnel à τ. En agissant sur les valeurs qui déterminent τ,
+            on peut ainsi réduire le temps de réponse.
+        </div>
+    </div>
+{% endblock %}
+
+{% block navChapter %}
+    <div class="previousChapter pull-left pointer">
+        <a href="{{ path('loadCourse', {'id': course.id, 'slugCourse': course.slug, 'chapter_id':1 }) }}"
+           class="btn btn-success">
+            Chapitre précédent
+            <i class="fa fa-hand-o-left"></i>
+        </a>
+    </div>
+    <div class="nextChapter pull-right pointer">
+        <a href="{{ path('loadCourse', {'id': course.id, 'slugCourse': course.slug, 'chapter_id':3 }) }}"
+           class="btn btn-success">
+            <i class="fa fa-hand-o-right"></i>
+            Chapitre suivant
+        </a>
+    </div>
+{% endblock %}
+
+{% block chapterAside %}
+
+        <div class="recent-post-widget">
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Principes fondamentaux
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                         data-parent="#accordionExample">
+                        <div class="card-body">
+                            <ul>
+                                <li>
+                                    2.1 Capteurs actifs
+                                    <ul>
+                                        <li>2.1.1 Thermoélectricité</li>
+                                        <li>2.1.2 Pyro-électricité</li>
+                                        <li>2.1.3 Piézo-électricité</li>
+                                        <li>2.1.4 Effet d’induction électromagnétique</li>
+                                        <li>2.1.6 Effet photovoltaïque</li>
+                                        <li>2.1.7 Effet Hall</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    2.2 Capteurs passifs
+                                </li>
+                                <li>
+                                    2.3 Capteurs composites
+                                </li>
+                                <li>
+                                    2.4 La chaine de mesure
+                                </li>
+                                <li>
+                                    2.5 Étalonnage du capteur
+                                </li>
+                                <li>
+                                    2.6 Sensibilité
+                                    <ul>
+                                        <li>2.6.1 Définition</li>
+                                        <li>2.6.2 Sensibilité en régime statique</li>
+                                        <li>2.6.3 Sensibilité en régime dynamique et réponse en fréquence</li>
+                                    </ul>
+                                </li>
+                                <li>2.7 Rapidité et temps de réponse</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

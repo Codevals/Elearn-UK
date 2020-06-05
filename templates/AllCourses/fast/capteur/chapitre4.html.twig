@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Template</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="event, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="img/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css " />
+    <link rel="stylesheet" href="css/themify-icons.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/own.css">
+</head>
+
+<body>
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <nav class="nav-section">
+        <div class="container">
+            <div class="nav-right">
+                <a href="">Se connecter</a>
+                <a href=""> <span class="caret"></span></a>
+                <form id="logout-form" action="" method="POST" style="display: none;">
+                </form>
+            </div>
+            <ul class="main-menu">
+                <li><a href="">Acceuil</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="site-breadcrumb">
+        <div class="container">
+            <h2>Capteurs.</h2>
+        </div>
+    </div>
+
+    <section class="blog-page-section spad pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 post-list">
+                    <div class="post-item">
+                        <div class="post-content">
+                            <div class="container">
+                                <img style="height: 200px; width: 80%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                                    alt="Card image">
+                            </div>
+                            <br>
+                            <h3><a href="">Capteurs de température</a></h3>
+                            <div class="post-meta">
+                                <span><i class="fa fa-calendar-o"></i> date de publication</span>
+                                <span><i class="fa fa-user"></i> Auteur</span>
+                            </div>
+                            <div class="container">
+                                <br>
+                                <p style="text-align: justify;">
+                                    Nous décrirons explicitement (principe et lois élémentaire) dans ce chapitre des capteurs utilisés pour la mesure de la température. Ainsi La température mesurée à l’aide d’un thermocouple ou d’une résistance thermométrique est celle du capteur Tc. Elle
+                                    dépend de la température Tx du milieu dans lequel il est plongé mais elle est réellement déterminée en faisant le bilant d’énergie du capteur. Les énergies mises en jeu sont les suivantes : <br>                                    • énergie dissipée dans le capteur lorsqu’il est parcouru par un courant de mesure;<br> • énergie échangée entre le capteur et le milieu dont on mesure la température;<br> • énergie échangée entre le capteur et l’environnement
+                                    externe à la température ambiante;<br> D’autres capteurs tels que le capteurs capacitif de niveau ou de dilatation, capteur potentiométrique linéaire de position, ..., seront vus en TD ou encore lors des sorties pédagogiques.
+                                    <br>
+                                </p>
+                                <br>
+                                <h4>4.1 Thermométrie par résistance</h4>
+                                <br>
+                                <p style="text-align: justify;">
+                                    D’une façon générale la valeur d’une résistance dépend de sa température T. <br><br>
+                                    <h6 class="text-center">$R_(T) = R_0.F (T − T_0)$ $R_0$</h6> <br> étant la résistance à la température de référence $T0$ et la fonction F une caractéristique du matériau, égale à 1 pour $T = T0$. Pour leur utilisation on peut par exemple les
+                                    insérer dans un montage potentiométrique (du résistance thermométrique) et on prend les valeurs de la tension de mesure vm qui varie avec la résistance et donc avec la température.
+                                </p>
+                                <br>
+                                <h5>4.1.1 Pour les métaux</h5>
+                                <br>
+                                <p style="text-align: justify;">
+                                    Le comportement thermique de leur résistance est : <br> $R(T) = R_0( 1 + AT + BT^2 + CT^3)$ <br> T étant exprimé en degrés. A, B, et C sont des constante caractéristique du matériau. Exemple : Pour le Nickel dont le
+                                    comportement thermique est : <br> $R(T) = R_0 (1 + AT + BT^2); $ $R_0 = 100Ω,A = 5,49167.103//◦CetB = 6,66667.10−6//◦C^2$
+                                </p>
+                                <br>
+                                <h5>4.1.2 Pour les thermistances (mélange d’oxydes)</h5>
+                                <br>
+                                <p style="text-align: justify;">
+                                    Ce sont des semi-conducteur dont le comportement thermique est : <br><br> $R(T) = R_0exp[B (1 /T − 1 /T0)]$ <br><br> T est la température absolue (K). Les coeﬃcients de la loi de variation de R sont préalablement déterminés
+                                    par un ensemble de mesures pour des températures connues. La détermination de la valeur de R permet d’en déduire sa température. Dans le cas des petites variations ∆T de température autour d’une valeur T, la loi générale
+                                    de variation de résistance peut être linéarisée. <br><br>
+                                    <h6 class="text-center text-success">$R(T + ∆T) = RT (1 + α_R∆T) (4.1)$</h6> <br><br> $α_R = (1 /R(T)) .( dR/ dT$) <br><br>
+                                </p>
+                                <p style="text-align: justify;">
+                                    $α_R$ est le coeﬃcient de température dela résistance ou sensibilité thermique àla température T ; $αR$ dépend évidemment de la température et du matériau. Par exemple à 0 degré pour le platine :$ αR = 3.9 10^-3 // degré$
+                                </p>
+                                <br>
+                                <h3>4.2 Thermométrie par thermocouple</h3>
+                                <br>
+                                <h5>4.2.1 Généralités</h5>
+                                <br>
+                                <p style="text-align: justify;">
+                                    Un thermocouple est constitué de deux conducteurs A et B formant entre eux deux jonctions qui sont à des température T1 et T2 et délivrant une force électromotrice $E^(T_2T_1) A//B$ qui dépend, de la nature des conducteurs A et B et des températures T1
+                                    et T2. La température de l’une des jonctions est ﬁxe, connue et sert de référence $(T1 = Tref)$. Celle de l’autre jonction T2 est la température Tc qu’elle atteint lorsque placée dans le milieu étudié de température
+                                    inconnue Tx : la température Tc est fonction de Tx et de l’ensemble des échanges thermiques possibles avec d’autres milieux (les parois, le milieu extérieur). La prise d’information se faisant au niveau d’une jonction
+                                    dont les dimensions peuvent être très réduites : <br> • le thermocouple permet de faire des mesures de température ponctuelles ; <br> • la capacité caloriﬁque du capteur est réduite
+                                    ce qui assure une r"ponse rapide (vitesse de réponse élevée). La f.e.m. du thermocouple est une fonction non linéaire de T , sur de grands intervalles de température. La non linéarité de la relation entre la f.é.m.
+                                    du thermocouple et la température est mise en évidence par la forme polynomiale de l’équation qui les lie. <br><br>
+                                    <h6 class="text-center text-success">$ E = sum_(i=0)^N a_iT_i (4.2)$ </h6> <br><br>
+                                </p>
+                                <br>
+                                <p style="text-align: justify;">
+                                    Pour chaque type de thermocouple, une norme déﬁnit : <br> • une table de valeurs de la f.e.m. en fonction de la température T ; <br> • et une expression polynomiale qui traduit algébriquement et en conformité avec la
+                                    table la relation entre f.e.m. et T. <em> Exemple : Le couple Platine-Rhodium on a, entre 0◦−1820◦, selon la norme NFC 42-321 : $E = sum_(i=0)^8 a_iT_i$ avec les coeﬃcient ai tels que
+                                        :</em>
+                                </p>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/formule9.png.jpg" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">.</figcaption>
+                                </figure>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/fig4.1.jpg" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">Figure 4.1 – Variation thermique de la f.e.m. de différents types de thermocouples. <br><br>
+                                        <em>Exemple : La figure 4.1 illustre aussi pour différent thermocouple la fonction $E = f(T)$</em> .
+                                    </figcaption>
+                                </figure>
+                                <br>
+                                <p style="text-align: justify;">
+                                    La sensibilité thermique d’un couple ou pouvoir thermoélectrique s, à une température Tc, est déﬁnie par l’expression : <br><br>
+                                    <h6 class="text-center text-success">$s(T_c) = (dE_(A//B)) /(dT_c) (4.3)$</h6> <br><br>
+                                </p> <br><br>
+                                <p style="text-align: justify;">Elle est fonction de la température et s’exprime en $µV C−1$.</p>
+                                <br>
+                                <h5>4.2.2 Eﬀets thermoélectriques</h5>
+                                <br>
+                                <p style="text-align: justify;">
+                                    Les phénomènes thermoélectriques dans les chaînes de conducteurs métalliques ou semi-conducteurs mettent en évidence les conversions d’énergie qui s’opèrent en leur sein, entre énergie d’agitation thermique et énergie électrique des charges en mouvement.
+                                    <br>
+                                    <strong>Eﬀet peltier</strong><br> A la jonction de deux conducteurs A et B diﬀérents mais à même température T, (ﬁgure 4.2 ), s’établit une diﬀérence de potentiel qui ne dépend que de la nature des conducteurs et de
+                                    leur température. <br><br>
+                                    <h6 class="text-center text-success">$v_M −v_N = P^TA//B (4.4) $</h6>
+                                </p>
+                                <br><br>
+                                <p style="text-align: justify;">
+                                    <em>C’est la f.é.m. de Peltier (Jean Charles Athanase Peltier, physicien français (1785-1845))</em>. Lorsqu’un courant électrique passe dans une jonction de deux conducteurs de métaux diﬀérents, on observe une augmentation
+                                    ou une baisse de température selon le sens du courant; la quantité de chaleur dégagée ou absorbée étant proportionnelle à l’intensité du courant. Le passage d’un courant peut donc entraîner l’absorption de la chaleur;
+                                    on utilise cet eﬀet dans certains petits réfrigérateurs ou pour le refroidissement de circuits électriques.
+                                </p>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/fig4.2.jpg" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">Figure 4.2 – Eﬀet peltier.</figcaption>
+                                </figure>
+                                <br>
+                                <p style="text-align: justify;">
+                                    <strong>Loi de Volta</strong> <br> Dans un circuit isotherme constitué de conducteurs diﬀérents la somme des f.é.m. de Peltier est nulle. Dans la chaîne constituée des métaux A,B,C,D (ﬁgure 4.3) on a donc :
+                                </p>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/fig4.3.jpg" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption"> Figure 4.3 – Loi de Volta.</figcaption>
+                                </figure>
+                                <br>
+                                <p style="text-align: justify;">
+                                    $P^TA//B + P^TB//C + P^TC//D + P^TD//A = 0$ ou <br> $P^TA//B + P^TB//C + P^TC//D =- P^TD//A $ ou encore <br> $P^TA//B + P^TB//C + P^TC//D = P^TA//D$ <br>
+                                    <strong>Eﬀet Thomson</strong> <br> L’eﬀet Thomson se rapporte à la production ou à l’absorption de chaleur provoquée par le passage d’un courant dans une portion de conducteur, en présence d’une diﬀérence de température
+                                    entre les extrémités du tronçon. En eﬀet, entre deux points M et N à température diﬀérente, à l’intérieur d’un conducteur homogène A (ﬁgure 4.4) s’établit une f.é.m. ne dépendant que de la nature du conducteur et des
+                                    températures $T_M$ et $T_N$ :
+                                </p>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/fig4.4.jpg" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption"> Figure 4.4 – Effet Thomson.</figcaption>
+                                </figure>
+                                <br><br>
+                                <h6 class="text-center text-success">
+                                    $E^(T_MT_N) A = int_TM^TN h_Ad_T (4.5)$
+                                </h6>
+                                <br><br>
+                                <p style="text-align: justify;">
+                                    $E^(T MT_N) A$ est la f.é.m. de Thomson et hA le coeﬃcient de Thomson du conducteur A qui est une fonction de la température. Si $T_M=T_N$ alors $E^(T MT_N) A =0$: c’est la <strong>loi de Magnus</strong>. <br><br> En
+                                    application, ll est utilisé pour la réalisation des sondes thermométriques très précises. La force électromotrice qui apparaît dans le circuit dépend de la nature des deux conducteurs et des températures des deux jonctions
+                                    : celles-ci sont appelées respectivement : <strong>la soudure chaude</strong> (Jonction de l’ensemble thermocouple soumis à la température à mesurer) et <strong>la soudure froide</strong> (Jonction de l’ensemble thermocouple
+                                    maintenu à une température connue ou à 0 C) <br> <br>
+                                    <strong>Eﬀet Seebeck</strong> <br> Considérons un circuit fermé, constitué de deux conducteurs A et B dont les jonctions sont aux températures T1 et T2 : il constitue un couple thermoélectrique (ﬁgure 4.5 ). Ce couple
+                                    est le siège d’une f.é.m. dite de Seebeck $E(T_1T_2 )A//B$ ; qui résulte des eﬀets Peltier et Thomson qui s’y produisent. On a en eﬀet, <br> • la f.é.m. entre a et b : <br>
+                                </p>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/fig4.5.jpg" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption"> Figure 4.5 – Eﬀet Seebec.</figcaption>
+                                </figure>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/Capture6.PNG" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">.</figcaption>
+                                </figure>
+                                <br>
+                                <h5>4.2.3 Loi des métaux successifs</h5>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/Capture7.PNG" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">.</figcaption>
+                                </figure>
+                                <br>
+                                <h6 class="text-center text-success">$E^(T_2T_1) A//C = E^(T_2T_1) A//B −E^(T_2T_1) C//B$</h6>
+                                <br>
+                                <p style="text-align: justify;">
+                                    Cette relation appelée loi des métaux successifs, permet de déduire la f.é.m. de Seebeck du couple A/C lorsque l’on connaît les f.é.m. de Seebeck que délivrent les couples constitués des conducteurs A d’une part, C d’autre part, associés à un troisième
+                                    conducteur B.
+                                </p>
+                                <br>
+                                <h5>4.2.4 Loi des températures successive</h5>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/Capture8.PNG" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">.</figcaption>
+                                </figure>
+                                <br>
+                                <h5>4.2.5 Loi des métaux intermédiaire</h5>
+                                <br>
+                                <p style="text-align: justify;">
+                                    Quand on introduit dans le circuit comprenant le couple A/B un conducteur de nature diﬀérente,laf.é.m.dontlecircuitestlesiègen’estpasmodiﬁéeàconditionquececonducteur ait ses extrémités à même température. En eﬀet, le conducteur C placé dans le circuit
+                                    du thermocouple (ﬁgure 4.6) entre les points M et M0 dont les températures sont identiques y développe une f.é.m. résultante nulle : <br><br>
+                                    <h6 class="text-center text-success">$P^(T_0) B//C + int_(T_0)^(T_0) hCd_T + PT_0 C//B = 0 (4.7)$</h6> <br><br>
+                                </p>
+                                <p style="text-align: justify;">
+                                    Cette conclusion demeure valable quel que soit le nombre de conducteurs introduits à condition que leurs extrémités soient deux à deux à même température.
+                                </p>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/fig4.6.jpg" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">Figure 4.6 – Loi des métaux intermédiaires : un métal intermediaire C.</figcaption>
+                                </figure>
+                                <br>
+                                <h5>4.2.6 Mise en œuvre et dispositifs de mesure</h5>
+                                <br>
+                                <p style="text-align: justify;">
+                                    • <strong>Réalisation du thermocouple et sa protection</strong> <br> Il faut éviter que se créent lors de son montage ou de son utilisation des inhomogénéités danssastructurequirisquent,enmodiﬁantlocalementlespropriétésthermoélectriques
+                                    de former des couples parasites. On a entre autre : <br> - les contraintes mécaniques dues à des pliures ou à la tension du ﬁl; elles peuvent en général être supprimées par recuit); <br> - les contaminations chimiques
+                                    : les ﬁls doivent être protégés vis-à-vis de tout agent susceptible de réagir avec eux; en particulier, lors de leur manipulation une propriété extrême est requise. La soudure du thermocouple doit être d’un volume aussi
+                                    réduit que possible pour éviter entre ses divers points des diﬀérences de température qui donneraient naissance à des f.é.m. parasites, conséquence des modiﬁcations chimiques des métaux au niveau de la soudure. Les
+                                    techniques suivantes sont recommandées : <br> - le soudage autogène au chalumeau oxyacétylénique est la technique la plus courante; <br> - le soudage à l’arc électrique; <br> - le brasage à l’étain quand la température
+                                    d’utilisation n’est pas trop élevée (couple de type T). <br> • Montages de mesure Le montage utilisé est schématisé par la ﬁgure 4.7. Le circuit n’est le siège que de la f.é.m. de Seebeck du thermocouple. En eﬀet, la
+                                    somme des f.é.m. thermoélectriques a pour expression : <br>
+                                </p>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/fig4.7.jpg" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">Figure 4.7 – Schéma de principe de la liaison d’un thermocouple à un appareil de mesure.</figcaption>
+                                </figure>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/Capture9.PNG" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">.</figcaption>
+                                </figure>
+                                <br>
+                                <p style="text-align: justify;">
+                                    <strong>• Câbles de compensation</strong> <br> On peut être amené à utiliser une longueur de ﬁls de couple aussi courte que possible pour des raisons d’économie lorsqu’on emploie un couple coûteux ou pour éviter la
+                                    fragilité de l’installation lorsque les conditions de mesure imposent un ﬁl de couple très ﬁn. On intercale alors entre le couple $A//B$ et l’appareillage de mesure des ﬁls $A_0 et B_0$ qui ne doivent en aucun cas modiﬁer
+                                    la f.é.m. $E^(T_cT_(ref)) A//B$ que délivrerait seul le couple $A//B (ﬁgure 4.8 )$.
+                                </p>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/fig4.8.jpg" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">Figure 4.8 – Schéma de montage des câbles de compensation.</figcaption>
+                                </figure>
+                                <br>
+                                <p style="text-align: justify;">
+                                    Si la fragilité du couple est mise en cause il suﬃt de raccorder les ﬁls de couple avec des ﬁls de même nature mais de diamètre supérieur. <br> Si le prix du couple est mis en cause, on peut assurer la liaison par des
+                                    ﬁls de nature diﬀérente de celle du couple mais de caractéristiques bien déterminées : <em>ce sont les câbles de compensation</em> : <br> Si le couple $A//B$ était prolongé jusqu’à l’appareil de mesure on aurait :
+                                </p>
+                                <br>
+                                <br>
+                                <h6 class="text-center text-success">
+                                    $v_m = E^ (T_cT_(ref)) A//B = P^(T_c) A//B −P^(T_(ref)) A//B +int_(T_(ref))^ (T_c) (h_A −h_B)d_T (4.12)$
+                                </h6>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/Capture10.PNG" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">.</figcaption>
+                                </figure>
+                                <br>
+                                <p style="text-align: justify;">
+                                    En déﬁnitive, les câbles de compensation $A'$ et $B'$ ne modiﬁent pas la tension délivrée par le couple $A//B$ à condition que : <br>
+                                    <em>les jonctions $A//A'$ et $B//B'$ soient à la même température $T2_$ ; les couples $A'//B'$ et $A//B$ aient la même f.é.m. de Seebeck entre $T_2$
+                                        et $T_(ref)$.</em>
+
+                                </p>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-8 col-md-5 col-lg-4 col-xl-3 offset-xl-1 offset-0 pl-xl-0 sidebar">
+                    <!-- <div class="widget">
+                        <form class="search-widget">
+                            <input type="text" placeholder="Rechercher...">
+                            <button><i class="ti-search"></i></button>
+                        </form>
+                    </div> -->
+
+                    <div class="widget own">
+                        <div class="recent-post-widget">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Collapsible Group Item #1
+                                      </button>
+                                        </h2>
+                                    </div>
+
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                                            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Collapsible Group Item #2
+                                      </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                                            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Collapsible Group Item #3
+                                      </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                                            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </div>
+
+    <footer class="footer-section">
+        <div class="copyright">
+            <div class="container">
+                <p>Copyright ©2020 Tous droits reservés </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        MathJax = {
+            loader: {
+                load: ['input/asciimath', 'output/chtml']
+            },
+            asciimath: {
+                delimiters: [
+                    ['$', '$'],
+                    ['`', '`']
+                ]
+            }
+        }
+    </script>
+
+    <script src="mathjax/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="js/jquery-3.2.1.min.js "></script>
+    <script src="js/main.js "></script>
+    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

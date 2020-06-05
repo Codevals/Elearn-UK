@@ -1,0 +1,17 @@
+.sidebar-menu,
+.sidebar-menu>li.header {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.sidebar-menu>li>a {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -7px;
+}
+
+.pointer {
+    cursor: grab;
+}

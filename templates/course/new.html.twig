@@ -1,0 +1,23 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}New Course{% endblock %}
+
+{% block body %}
+    <div class="box">
+
+        <div class="box-header">
+            <h3>Nouveau Cours</h3>
+        </div>
+        <div class="box_body">
+            <div class="col-md-12">
+                {{ include('course/_form.html.twig') }}
+            </div>
+        </div>
+        <div class="box-footer">
+            <a href="{{ path('course_index') }}" class="btn btn-xs btn-info pull-right">
+                Liste
+            </a>
+        </div>
+
+    </div>
+{% endblock %}

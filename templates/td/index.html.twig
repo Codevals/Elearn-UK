@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Td index{% endblock %}
+
+{% block body %}
+    <h1>Td index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>DocumentName</th>
+                <th>UpdatedAt</th>
+                <th>CreatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for td in tds %}
+            <tr>
+                <td>{{ td.id }}</td>
+                <td>{{ td.titre }}</td>
+                <td>{{ td.documentName }}</td>
+                <td>{{ td.updatedAt ? td.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ td.createdAt ? td.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('td_show', {'id': td.id}) }}">show</a>
+                    <a href="{{ path('td_edit', {'id': td.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('td_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,480 @@
+{% extends 'baseCourse.html.twig' %}
+
+{% block title %}
+    Chapitre {{ chapter.numero }}: {{ chapter.titre }}
+{% endblock %}
+
+{% block courseTitle %}
+    Chapitre {{ chapter.numero }}: {{ chapter.titre }}
+{% endblock %}
+
+{% block video %}
+    <img style="height: 200px; width: 100%; display: block;"
+         src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+         alt="Card image">
+    <hr>
+{% endblock %}
+
+{% block courseContent %}
+
+    <div style="text-align:justify;">
+        Dans ce chapitre nous avons donnés les définitions et les caractéristiques métrologiques permettant de juger
+        l’exactitude des valeurs mesurées par un capteur.
+        <br><br>
+        <strong>Objectifs spécifiques</strong> : connaître les définitions et, savoir distinguer, évaluer et corriger
+        les types d’erreurs.
+    </div>
+    <br><br>
+
+    <h3 style=" text-decoration :beige">1.1 Définitions</h3>
+    <br>
+    <div style="text-align: justify;">
+        <i class="fa fa-star"></i>
+        La grandeur : est la propriété d’un phénomène, d’un corps ou d’une substance, que l’on peut exprimer
+        quantitativement sous forme d’un nombre et d’une référence. Exemples : la température, la pression,
+        la vitesse, etc. <br><br>
+        <i class="fa fa-star"></i>
+        Une mesure : est l’évaluation d’une grandeur par comparaison avec une autre grandeur de même nature
+        prise pour unité.<br><br>
+        <i class="fa fa-star"></i>
+        La grandeur mesurée est ce que l’on peut mesurer.<br><br>
+        <i class="fa fa-star"></i>
+        Le mesurande est ce que l’on veut mesurer. <br><br>
+
+        <div style="text-align: justify;" class="text-success" style="text-align: justify;">
+            Remarque : « Mesurande » et « grandeur mesurée » sont bien deux notions différentes. Le mesurande est
+            généralement une grandeur physique non électrique (température, force, un déplacement, etc). C’est la
+            grandeur d’entrée du capteur ou excitation.
+        </div>
+        <br><br>
+        <div>
+            <i class="fa fa-star"></i>
+            Capteur : c’est un dispositif qui soumis à l’action d’un mesurande m non électrique présente une
+            caractéristique de nature électrique (charge, tension, courant ou impédance) désignée par s et qui est
+            fonction du mesurande (Fig1.1).
+
+            <div class="text-center">
+                <img src="{{ asset('assets/courses/images/capteurs 2020/fig1.1.jpg') }}" class="rounded" alt="...">
+                <figcaption class="figure-caption text-right">Fig1.1</figcaption>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div style="text-align: justify">
+        <i class="fa fa-star"></i>
+            Le mesurage : est l’ensemble des opérations expérimentales conduisant la connaissance du
+            mesurande m.
+        <br><br>
+        <i class="fa fa-star"></i>
+            Grandeur de sortie s ou réponse du capteur : est l’information délivrée par le capteur
+            soumis à l’excitation m.
+        <br>
+        <blockquote>
+            Note : Toute valeur de s doit permettre de remonter à une seule valeur m et inversement.
+        </blockquote>
+    </div>
+
+    <br>
+    <div class="text-center">
+        <span class="text-success">s = f (m)	(1.1)</span>
+    </div>
+    <br>
+    <div style="text-align: justify;">L’expression théorique reliant s à m résulte des lois physiques mis en jeu dans
+        le fonctionnement du capteur. Elle dépend aussi de sa forme (géométrie, dimensions du capteur), des matériaux
+        qui le constituent et éventuellement de son environnement et de son mode d’emploi(température, alimentation).
+        L’exploitation numérique de la grandeur de sortie en fonction du mesurande s = f (m) résulte en générale d’un
+        étalonnage (Fig1.2).
+    </div>
+    <br>
+    <div class="text-center">
+        <img style="height: 200px; width: 50%;"
+             src="{{ asset('assets/courses/images/capteurs 2020/fig1.2.jpg') }}" alt="Card image">
+    </div>
+    <div>
+        <p style="text-align: justify;"> Figure 1.2 – Courbe d’étalonnage d’un capteur : a) son établissement, à partir
+            de valeurs connues du mesurande; b) son exploitation, à partir des valeurs mesurées de la réponse du capteur.
+        </p>
+    </div>
+    <br>
+    <div style="text-align: justify;">
+        Pour des raisons de facilité d’exploitation on essaye d’avoir si possible une relation de proportionnalité entre
+        les variations de l’excitation et celles de la réponse du capteur :
+    </div>
+    <br>
+    <h6 class="text-success" style="text-align: center;">∆s = k∆m (1.2)</h6>
+    <br>
+    <div style="text-align: justify;">
+        k est la sensibilité du capteur. Un des problèmes importants dans la conception et l’utilisation d’un capteur
+        est la constance de sa sensibilité k qui doit dépendre aussi peu que possible :
+    </div>
+    <div class="text-center">
+        <img style="height: 30px; width: 7%;"
+             src="{{ asset('assets/courses/images/capteurs 2020/capture1.png') }}" alt="Card image">
+    </div>
+    <br>
+    <div>
+        <ol>
+            <li> de la valeur de m ⇒ le capteur est linéaire par conséquent</li>
+            <li> de sa fréquence de variation ⇒ largeur de la bande passante;</li>
+            <li> du temps ⇒ vieillissement;</li>
+            <li> de l’action d’autres grandeurs physiques de son environnement qui ne sont pas l’objet de la
+                mesure ⇒ grandeurs d’influence (température, humidité, vibration, ...)
+            </li>
+        </ol>
+    </div>
+    <br><br>
+    <div style="text-align: justify;">
+        <h3 style=" text-decoration :rgba(245, 240, 220, 0.788)">1.2 Caractéristiques métrologiques</h3>
+        <div style="text-align: justify;">
+            La plus ou moins bonne concordance entre la valeur mesurée et la valeur réelle du mesurande dépend des
+            conditions de mesure. La valeur mesurée est donc incertaine et la qualité du capteur dépend des limites
+            de l’incertitude sur la valeur mesurée.
+        </div>
+    </div>
+    <br><br>
+    <div style="text-align: justify;">
+        <h5>1.2.1 Les erreurs de mesures</h5>
+        <div style="text-align: justify;">Les seuls mesurandes dont la valeur est parfaitement connue sont les grandeurs étalons puisque leur valeur est fixée par convention. La valeur de tout autre mesurande ne peut être connue qu’après traitement par une chaîne
+            de mesure. C’est la vraie valeur du mesurande qui détermine l’excitation du capteur, mais l’expérimentateur n’a accès qu’à la réponse globale de la chaîne de mesure. Cette réponse, permet de déduire la valeur du mesurande
+            : la valeur mesurée. L’écart entre la valeur mesurée et la valeur vraie est l’erreur de mesure. Celle-ci provient des imperfections de la chaîne de mesure qui dégradent l’information du signal au cours de son traitement.
+            Une conception rigoureuse de la chaîne de mesure permet de réduire l’erreur de mesure et donc l’incertitude sur la valeur vraie.
+        </div>
+    </div>
+    <br><br>
+    <div style="text-align: justify;">
+        <h5 style=" text-decoration :rgba(245, 240, 220, 0.788)">1.2.2 L’incertitude</h5>
+        <div style="text-align: justify;">
+            En général pour une grandeur X le résultat de mesure est caractérisé par un couple (x, dx) et une unité de
+            mesure où x et dx sont respectivement la valeur mesurée et dx l’incertitude sur x. Les incertitudes
+            proviennent des différentes erreurs liées à la mesure. <br> Ainsi, on a : x-dx < X < x+dx <br>
+            Exemple : 5 cm ± 10 %,ou 5 cm ± 5 mm.
+        </div>
+    </div>
+    <br><br>
+    <div style="text-align: justify;">
+        <h5>1.2.3 L’erreur absolue</h5>
+        <div style="text-align: justify;">
+            C’est le résultat x d’un mesurage moins la valeur X vraie du mesurande. Une erreur ε absolue s’exprime
+            dans l’unité de la mesure. ε = x − X.
+        </div>
+    </div>
+    <br><br>
+    <div style="text-align: justify;">
+        <h5>1.2.4 L’erreur relative</h5>
+        <div style="text-align: justify;">
+            C’est le rapport de l’erreur absolue de mesure à une valeur vraie de mesurande. Une erreur relative εr
+            s’exprime généralement en pourcentage de la grandeur mesurée. εr = ε/X ou εr(%) = 100 × εr.
+        </div>
+    </div>
+    <br><br>
+    <div style="text-align: justify;">
+        <h5>1.2.5 Types d'erreurs</h5>
+        <br>
+        <div style="text-align: justify;">
+            Ce sont des erreurs reproductibles reliées à leur cause par une loi physique, donc susceptible d’être éliminées par des corrections convenables. Elle introduit donc une variation constante (négative ou positive) entre valeur vraie et valeur mesurée.
+        </div>
+    </div>
+    <br><br>
+    <div>
+        <h5>Erreurs systématiques :</h5>
+        <br>
+        <div style="text-align: justify;">
+            Ce sont des erreurs reproductibles reliées à leur cause par une loi physique, donc susceptible d’être éliminées par des corrections convenables. Elle introduit donc une variation constante (négative ou positive) entre valeur vraie et valeur mesurée.
+        </div>
+        <br>
+    </div>
+    <div>
+        <p> <em>Quelques exemples :</em></p>
+        <br>
+        <ul>
+            <li>
+                <em>
+                    <p style="text-align: justify;">Erreurs sur la valeur d’une grandeur de référence <br>
+                        Le décalage du zéro d’un appareil de mesure à déviation engendre une mesure erronée.
+                        Ce type d’erreur peut être réduit par la vérification soignée des appareillages associés.
+                    </p>
+                </em>
+            </li>
+            <br>
+            <li>
+                <em>
+                    <p style="text-align: justify;">Erreurs sur les caractéristiques du capteur <br>
+                        Il s’agit en général, des erreurs qui affectent la sensibilité du capteur. Le vieillissement
+                        d’un capteur, la fatigue mécanique de ses composants ou leur altération chimique entraînent une
+                        modification progressive de sa courbe d’étalonnage initial. C’est le cas en particulier pour
+                        les thermocouples et les thermistances. Un réétalonnage régulier du capteur permet de réduire,
+                        ce type d’erreur.
+                    </p>
+                </em>
+            </li>
+            <br>
+            <li>
+                <em>
+                    <p style="text-align: justify;">
+                        Erreurs dues au mode ou aux conditions d’emploi <br>
+                        Un capteur dans son fonctionnement atteint un régime permanent. Toute mesure effectuée avant
+                        ce régime est entachée d’erreur dite erreur de rapidité.C’est ainsi qu’une même sonde de
+                        température a une vitesse de réponse très différente selon qu’elle se trouve placée dans un
+                        fluide au repos ou en mouvement. Le capteur peut également modifier de façon appréciable la
+                        valeur du mesurande entraînant donc une erreur de finesse ou discrétion. C’est le cas par
+                        exemple d’une sonde thermométrique dont ses échanges thermiques externes ne seraient pas
+                        négligeables devant le milieu dans lequel elle se trouve.
+                    </p>
+                </em>
+            </li>
+            <br>
+        </ul>
+    </div>
+    <br>
+    <div>
+        <h5>Erreurs accidentelles ou aléatoires :</h5><br>
+        <div style="text-align: justify;">
+            Elles résultent d’une fausse manœuvre, d’un mauvais emploi ou de dysfonctionnement de l’appareil.
+            Elles ne sont généralement pas prises en compte dans la détermination de la mesure. On en distingue
+            les types :
+        </div>
+        <br>
+        <ul>
+            <li>
+                <em>
+                    <p style="text-align: justify;">
+                        Erreur de mobilité : C’est la variation maximale du mesurande en dessous de laquelle il n y a
+                        pas de variation détectable de la grandeur de sortie du capteur. C’est l’exemple du déplacement
+                        d’un curseur entre deux spires d’un potentiomètre bobiné qui n’entraîne aucune variation de la
+                        tension du curseur.
+                    </p>
+                </em>
+            </li>
+            <li>
+                <em>
+                    <p style="text-align: justify;">
+                        Erreur de lecture d’un appareil à déviation	: elle est liée à l’habileté de
+                        l’opérateur mais aussi, à la qualité de l’appareil (finesse de l’aiguille par exemple).
+                        La combinaison de l’erreur relative de mobilité (εm) et de l’erreur relative de lecture
+                        (εl) détermine l’erreur relative de résolution (εr) qui correspond à la variation minimale du
+                        mesurande mesurable.
+                    </p>
+                    <p class="text-center">
+                        <img style="height: 50px; width: 30%;"
+                             src="{{ asset('assets/courses/images/capteurs 2020/Capture2.PNG') }}" alt="Card image">
+                    </p>
+                </em>
+            </li>
+            <li>
+                <em>
+                    <p style="text-align: justify;">
+                        Erreur d’hystérésis : Il y a phénomène d’hystérésis lorsque le résultat de la mesure dépend de
+                        la précédente mesure. Exemple : la magnétisation d’un matériau par un courant électrique qui
+                        persiste même si le courrant s’annule.
+                    </p>
+                </em>
+            </li>
+            <li>
+                <em>
+                    <p style="text-align: justify;">
+                        Erreur due aux signaux parasites :
+                        Ce sont encore les grandeurs d’influence (température, le champ magnétique, la pression ou
+                        l’accélération, l’humidité, etc). Ainsi les fluctuations de tension des sources d’alimentation
+                        (conditionneur), le courant dû à l’agitation thermique des porteurs de charges et les inductions
+                        électromagnétiques modifient l’amplitude du signal traité à la sortie. <br>
+                        Par exemple, un appareillage ayant été étalonné à 20◦C ; toute variation de température de part
+                        ou d’autre de 20◦C pourra entraîner des variations de performances et donc du signal mesuré. <br>
+                        La température ambiante est une grandeur d’influence, son évolution journalière donne lieu à
+                        erreur systématique si l’ensemble des mesures se fait en quelques minutes. <br>
+                        L’erreur revêt un caractère aléatoire si les mesures se font sur plusieurs journées <br>
+                        Si l’on désigne par g1, g2...; les grandeurs d’influence, la relation entre grandeur électrique
+                        de sortie s et mesurande m, qui dans le cas idéal serait : <br>
+                        s = f (m)
+                        devient :
+                        s = f (m,g1,g2...) <br>
+                    </p>
+                </em>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div>
+        <h5>Réduction des erreurs accidentelles :</h5>
+        <br>
+        <div style="text-align: justify;">
+            L’ampleur de ces erreurs peut dans certains cas être réduite par des dispositifs ou des méthodes
+            expérimentales appropriés; <br> - protection de la chaîne de mesure vis-à-vis des causes d’erreur :
+            maintien en atmosphère à température stabilisée et à hygrométrie contrôlée; supports antivibratoires;
+            régulation des tensions d’alimentation; amplificateurs à faible dérive; convertisseurs analogique-numérique
+            de résolution suffisante; blindages et mises à la masse convenables; utilisation d’amplificateurs
+            d’instrumentation à taux de réjection du mode commun élevé; filtrage des signaux parasites; <br>
+            - utilisation de modes opératoires judicieux : méthodes de mesure différentielle (montage push-pull par
+            exemple); élimination de l’influence des inductions parasites du secteur par convertisseur à double rampe;
+            extraction d’un signal du bruit par détection synchrone, corrélation.
+        </div>
+    </div>
+    <br><br>
+
+    <div style="text-align: justify;">
+        <h5>1.2.6 Qualités d’une chaîne de mesure</h5>
+        <br>
+        <div style="text-align: justify;">
+            Les erreurs accidentelles entraînent une dispersion des résultats lors de mesures répétées; cependant leur
+            traitement statistique permet : <br> - de connaître la valeur la plus probable de la grandeur mesurée ;<br>                                    - et de fixer les limites de l’incertitude. <br> Ainsi lorsque le mesurage d’une même valeur inconnue du mesurande a été répété n fois, donnant les résultats : m1, m2, ..., mn, la valeur moyenne (probable) $bar m$ est
+            par définition : <br><br>
+            <div style="text-align: justify;">$bar m = (m_1+m_2+...+(m_n))/n$</div>
+        </div>
+        <br>
+        <div style="text-align: justify;">
+            La dispersion de ces résultats est donnée par l’écart type σ :
+        </div>
+        <br><br>
+        <div style="text-align: justify;">
+            $sigma = sqrt(((m_1-bar m_2)^2 + (m_2-bar m)^2 + ... + (m_n-bar m)^2)/n)$
+        </div>
+        <br>
+        <div style="text-align: justify;">
+            Si les erreurs accidentelles qui affectent les différentes mesurages sont indépendantes la probabilité
+            d’apparition des différents résultats satisfait à la loi normale dite encore loi de Gauss. La probabilité
+            P(m1,m2) d’obtenir comme résultat d’une mesure une valeur du mesurande comprise entre deux valeurs m1 et m2
+            peut s’écrire :
+        </div>
+        <br>
+        <div style="text-align: justify;">
+            $P(underset(1)(m),underset(2)(m)) = int P(m)dm$ où $P(m)$ est la densité de probabilité pour la valeur m du
+            mesurande.
+            <br> <br>
+            Dans le cas de la loi de Gauss :
+        </div>
+        <div style="text-align: justify;">
+            $P(m) = 1/(sigma.sqrt(2 sigma^2)).exp{-(m-barm)/(2.sigma^2)}$
+        </div>
+        <div style="text-align: justify;">
+            la valeur de m la plus probable est $ bar m$;
+        </div>
+        <br>
+    </div>
+    <br>
+    <div>
+        <h5>Fidelité</h5>
+    </div>
+
+    <br>
+    <div style="text-align: justify;">La fidélité est la qualité d’un appareillage de mesure dont les erreurs accidentelles sont
+        faibles : elle se traduit par des résultats de mesurage groupés autour de leur valeur moyenne. L’écart type
+        dont l’importance reflète la dispersion des résultats est souvent considéré comme l’erreur de fidélité. La valeur
+        du mesurande la plus probable telle qu’elle résulte d’un ensemble de mesures peut être connue avec une faible
+        marge d’incertitude tout en étant éloignée de la valeur vraie du mesurande si des erreurs systématiques importantes
+        se sont superposées aux erreurs accidentelles (figure1.3).
+
+        <div class="text-center" style="align-content: center;">
+            <img style="height: 170px; width: 40%;"
+                 src="{{ asset('assets/courses/images/capteurs 2020/fig1.3.jpg') }}" alt="Card image">
+            <p style="text-align: justify;">Figure 1.3 – Appareillage fidèle (erreurs accidentelles faibles)</p>
+        </div>
+    </div>
+
+    <br><br>
+    <div>
+        <h5>Justesse</h5>
+        <br>
+        <div style="text-align: justify;">
+            La justesse est la qualité d’un appareillage de mesure dont les erreurs systématiques sont réduites :
+            la valeur la plus probable du mesurande qu’un tel appareillage permet de déterminer est alors très proche
+            de la valeur vraie (figure1.4).
+        </div>
+        <div class="text-center" >
+            <img style="height: 170px; width: 40%;"
+                 src="{{ asset('assets/courses/images/capteurs 2020/fig1.4.jpg') }}" alt="Card image">
+            <p style="text-align: justify;">Figure 1.4 – Appareillage juste (erreurs systématiques faibles)</p>
+        </div>
+    </div>
+
+    <br><br>
+    <div>
+        <h5>Précision</h5>
+        <br>
+        <div style="text-align: justify;">
+            La précision caractérise le fait que chaque mesure soit proche de la valeur réelle du mesurande :
+            un appareillage précis est donc à la fois fidèle et juste (figure1.5). La précision est spécifiée
+            numériquement comme l’intervalle autour de la valeur mesurée à l’intérieur duquel on est assuré de trouver
+            la valeur vraie.
+        </div>
+        <br>
+        <div class="text-center">
+            <img style="height: 170px; width: 40%;"
+                 src="{{ asset('assets/courses/images/capteurs 2020/fig1.5.jpg') }}" alt="Card image">
+            <p style="text-align: justify;">Figure 1.5 – Appareillage juste et fidèle (erreurs systématiques et accidentelles faibles)</p>
+        </div>
+        <br>
+        <div class="text-success" style="text-align: justify;">$Remarque:$ <br><br> La mesure d’une grandeur physique avec une précision donnée exige : <br> - le choix d’une méthode de mesure ; <br> - la sélection du capteur approprié ; <br> - la conception et la réalisation de la
+            chaîne de mesure associée.
+        </div>
+        <br>
+    </div>
+
+
+{% endblock %}
+
+{% block navChapter %}
+    <div class="nextChapter pull-right pointer">
+        <a href="{{ path('loadCourse', {'id': course.id, 'slugCourse': course.slug, 'chapter_id':2 }) }}"
+            class="btn btn-success">
+            <i class="fa fa-hand-o-right"></i>
+            Chapitre suivant
+        </a>
+    </div>
+{% endblock %}
+
+{% block chapterAside %}
+    <div class="recent-post-widget">
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Généralité
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                         data-parent="#accordionExample">
+                        <div class="card-body">
+                            <ul>
+                                <li>1.1 Définitions</li>
+                                <li>
+                                    1.2 Caractéristiques métrologiques
+                                    <ul>
+                                        <li>
+                                            <a href="">
+                                                1.2.1 Les erreurs de mesures
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                1.2.2 L’incertitude
+                                            </a>
+
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                1.2.3 L’erreur absolue
+                                            </a>
+
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                1.2.4 L’erreur relative
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                1.2.4 Types d'erreurs
+                                            </a>
+
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Nouvel etablissement{% endblock %}
+
+{% block body %}
+    <div class="box">
+        <div class="box-header">
+            <h3>Nouvel Etablissement</h3>
+        </div>
+        <div class="box-body">
+            {{ include('etablissement/_form.html.twig') }}
+        </div>
+        <div class="box-footer">
+            <a href="{{ path('etablissement_index') }}" class="btn btn-info btn-xs pull-right">
+                Liste
+            </a>
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}

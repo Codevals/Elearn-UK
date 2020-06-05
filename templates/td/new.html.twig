@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Td{% endblock %}
+
+{% block body %}
+    <h1>Create new Td</h1>
+
+    {{ include('td/_form.html.twig') }}
+
+    <a href="{{ path('td_index') }}">back to list</a>
+{% endblock %}

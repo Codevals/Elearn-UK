@@ -1,0 +1,45 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Etablissement index{% endblock %}
+
+{% block body %}
+    <div class="box">
+        <div class="box-header">
+            <h1>Liste des Etablissements</h1>
+        </div>
+        <div class="box-body">
+            <table class="table table-condensed table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Libelle</th>
+                <th>LibelleCourt</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% set i = 1 %}
+            {% for etablissement in etablissements %}
+                <tr>
+                    <td>{{ i }}</td>
+                    <td>{{ etablissement.libelle }}</td>
+                    <td>{{ etablissement.libelleCourt }}</td>
+                    <td>
+                        <a href="{{ path('etablissement_show', {'id': etablissement.id}) }}">show</a>
+                        <a href="{{ path('etablissement_edit', {'id': etablissement.id}) }}">edit</a>
+                    </td>
+                </tr>
+                {% set i = i + 1 %}
+            {% else %}
+                <tr>
+                    <td colspan="4">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            </table>
+        </div>
+        <div class="box-footer">
+            <a href="{{ path('etablissement_new') }}" class="btn btn-primary btn-xs">Nouveau</a>
+        </div>
+    </div>
+{% endblock %}

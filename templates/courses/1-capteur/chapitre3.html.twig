@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Template</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="event, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="img/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css " />
+    <link rel="stylesheet" href="css/themify-icons.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/own.css">
+</head>
+
+<body>
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <nav class="nav-section">
+        <div class="container">
+            <div class="nav-right">
+                <a href="">Se connecter</a>
+                <a href=""> <span class="caret"></span></a>
+                <form id="logout-form" action="" method="POST" style="display: none;">
+                </form>
+            </div>
+            <ul class="main-menu">
+                <li><a href="">Acceuil</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="site-breadcrumb">
+        <div class="container">
+            <h2>Capteurs.</h2>
+        </div>
+    </div>
+
+    <section class="blog-page-section spad pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 post-list">
+                    <div class="post-item">
+                        <div class="post-content">
+                            <div class="container">
+                                <img style="height: 200px; width: 80%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                                    alt="Card image">
+                            </div>
+                            <br>
+                            <h3><a href="">Titre</a></h3>
+                            <div class="post-meta">
+                                <span><i class="fa fa-calendar-o"></i> date de publication</span>
+                                <span><i class="fa fa-user"></i> Auteur</span>
+                            </div>
+                            <div class="container">
+                                <h2 style="text-align: center;">Conditionneurs des capteurs passifs</h2>
+                                <br><br>
+                                <p style="text-align: justify;">
+                                    Les variations d’impédance ne sont mesurables que par les modifications du courant ou de la tension qu’elles entraînent dans un circuit alimenté par une source extérieure. Le circuit électrique associé à un capteur passif constitue son conditionneur et
+                                    c’est l’ensemble du capteur et du conditionneur qui est la source du signal électrique. Objectifs spécifiques : Connaître les types de circuits conditionneurs; leurs avantages et limites en déterminant leurs qualités.
+                                </p>
+                                <br>
+                                <h3 style="text-align: center;">3.1 Caractéristiques générales des conditionneurs</h3>
+                                <br>
+                                <h4 style="text-align: center;">3.1.1 Principaux types de conditionneurs</h4>
+                                <br>
+                                <p style="text-align: justify;">
+                                    Généralement une source de tension es ou de courant is et d’autres impédance Zk constituent le conditionneur du capteur dont les variations de l’impédance Zc sont liées aux évolution d’un mesurande m. On peut distinguer deux groupes principaux de conditionneurs
+                                    : <br> - Les conditionneurs peuvent transférer l’information liée aux variations d’impédance du capteur sur l’amplitude du signal de mesure; <br> $vm = es.F (Zc,Zk)$ <br> C’est le
+                                    cas des montages potentiométriques et des ponts.
+                                </p>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/fig3.1.jpg" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">Figure 3.1 – Conditionneur de capteur passif : montage potentiométrique.</figcaption>
+                                </figure>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/fig3.2.jpg" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">Figure 3.2 – Conditionneur de capteur passif : montage en pont.</figcaption>
+                                </figure>
+                                <br>
+                                <p style="text-align: justify;">
+                                    - Les conditionneurs (les oscillateurs) transfèrent l’information liée aux variations d’impédance du capteur sur la fréquence du signal de mesure;
+                                </p>
+                                <h6 style="text-align: center;">$fm = F (Zc,Zk)$</h6>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/fig3.3.jpg" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption"> Figure 3.3 – Conditionneur de capteur passif : oscillateur sinusoidal.</figcaption>
+                                </figure>
+                                <br>
+                                <h4>3.1.2 Qualités d’un conditionneur</h4> <br>
+                                <em>Sensibilité et linéarité</em>
+                                <br>
+                                <p style="text-align: justify;">
+                                    À la variation ∆m du mesurande correspond une variation ∆Zc de l’impédance du capteur qui selon le type de conditionneur entraîne soit une variation de l’amplitude de la tension de mesure soit de sa fréquence. La sensibilité globale Sa de l’association
+                                    du conditionneur et du capteur est de la forme : <br>
+                                    <br> $S_a = (∆vm)/ (∆m) ⇒ S_a = (((∆vm) /(∆Zc)).((∆Zc)/ (∆m)))$ <br> ou <br> $Sa = (∆fm)/ (∆m )⇒ S_a = ((∆fm) /(∆Zc)). ((∆Zc)/ (∆m))$ <br> La sensibilité propre du conditionneur est, selon le cas : <br> $(∆vm)/ (∆Zc)$
+                                    ou $(∆fm) /(∆Zc)$ <br> Celle du capteur proprement dit est : <br> $(∆Zc)/ (∆m)$ <br> L’association d’un conditionneur linéaire et d’un capteur linéaire délivre un signal de mesure proportionnel aux variations du mesurande.
+                                    Considérons l’exemple d’un capteur résistif Rc et d’un conditionneur constitué de résistances Rk dont certaines sont sensibles au mesurande : <br>
+                                    <br> $v_m = esF (Rc,Rk)$ <br> $dv_m =(sum_k( ((∂vm)/ (∂Rk)) . ((∂Rk )/(∂m) )+ ((∂vm)/ (∂Rc)) . ((∂Rc) /(∂m))).dm)$ <br> L'ensemble est linéaire à condition que : <br> $sum_k( ((∂vm)/ (∂Rk)) . ((∂Rk )/(∂m) )+ ((∂vm)/
+                                    (∂Rc)) . ((∂R_c) /(∂m))) = constant$ <br> Dans le cas simple d’un potentiomètre constitué d’une résistance R1 et d’un capteur résistif Rc on a : <br>
+                                    <br> Dans le cas simple d’un potentiomètre constitué d’une résistance R1 et d’un capteur résistif Rc on a : <br> <br> $v_m = e_s( (R_c)/ (R1 + R_c))$ <br> $(∂v_m)/ (∂R1) = e_s( −R_c/ (((R1) + Rc)^2))$ <br> $(∂v_m) /(∂Rc)
+                                    = e_s (R_1/ (R_1 + R_c)^2)$ <br> La sensibilité du montage est : <br> $S_a = e_s/ ((R1 + Rc)^2).(R_1((dRc)/(dm)) −R_c( (dR1)/ (dm)))$ <br> En choisissant pour R1 un capteur semblable à Rc mais sur lequel le mesurande
+                                    a une action opposée : <br>$ ((dR_c)/ (dm)) = (− dR_1)/ (dm) = S$ <br> il en résulte : <br> $(dR_c) /(dm) + (dR_1) /(dm) = 0 ⇒ R_1 + R_c = 2Rc_0 = constante$ <br><br> La sensibilité du montage est dans ces conditions
+                                    :
+                                    <br> $S_a = es /(2Rc0).S$ <br> Lorsque le capteur n’est pas linéaire,il est quelquefois possible de compenser sa nonlinéaritéparunenon-linéaritéopposéeduconditionneur,l’ensembleayantunfonctionnement qui est quasi linéaire,
+                                    au moins dans une plage limitée du mesurande. <br>
+
+                                    <strong>Compensation des grandeurs d’inﬂuence</strong> <br> Si le capteur est sensible à une grandeur d’inﬂuence, température, humidité ou rayonnement par exemple, il est important de pouvoir éliminer du signal de mesure
+                                    sa contribution aux variations de Zc. Cas d’un conditionneur et d’un capteur résistifs : <br> $vm = e_s.F .(Rc,R1,R2,...)$ La grandeur d’inﬂuence, de valeur g, pouvant aﬀecter aussi bien certains composants du conditionneur
+                                    que le capteur lui-même, une variation dg entraîne une variation dvm de la tension de mesure. <br>
+                                    <br> $dv_m =( sum_k( ((∂v_m) /(∂R_k) ). ((∂R_k )/(∂g)) + ((∂v_m)/ (∂R_c)) . ((∂R_c) /(∂g)))).dg$ <br><br> Les évolutions de la grandeur d’inﬂuence n’ont aucun eﬀet sur la tension de mesure lorsque la condition suivante
+                                    est satisfaite : <br><br>
+                                    <h6 class="text-center">$sum_k( ((∂v_m) /(∂R_k) ). ((∂R_k )/(∂g)) + ((∂v_m)/ (∂R_c)) . ((∂R_c) /(∂g)))=0$</h6> <br><br> Si par exemple, une seule des résistances du conditionneur est rendue sensible à la grandeur d’inﬂuence et qu’elle est
+                                    en outre, choisie identique à Rc : <br><br>
+                                    <h6 class="text-center">$(∂R_k)/ (∂g) = (∂R_c) /(∂g)$ <br><br>
+                                        <p style="text-align: justify;"> et il y a compensation des variations de la grandeur d’inﬂuence si :</p> <br><br>
+                                        <h6 class="text-center">$(∂v_m) /(∂R_k) = − (∂v_m)/ (∂R_c)$</h6> <br>
+                                        <br>
+                                </p>
+                                <br>
+                                <br>
+                                <h3>3.2 Montage potentiométrique</h3>
+                                <br>
+                                <h5>3.2.1 Mesure des résistances</h5>
+                                <br>
+                                <p style="text-align: justify;">Le capteur de résistance Rc en série avec une résistance R1 est alimenté par une source de résistance interne Rs et de f.é.m es continue ou alternative (figure). La tension vm est mesurée aux bornes du capteur par un appareil
+                                    de résistance d’entrée Rd ; on a : <br><br> $v_m = e_s ((R_cR_d)/ ((R_c (R_s + R_1)) + Rd (R_s + R_1 + R_c)))$ <br><br>
+
+                                    <figure class="figure text-center">
+                                        <img src="images/capteurs 2020/fig3.4.jpg" class="figure-img img-fluid rounded" alt="...">
+                                        <figcaption class="figure-caption">Figure 3.4 – Mesure de la tension aux bornes d’un capteur résistif dans un montage potentiométrique.</figcaption>
+                                    </figure>
+                                </p>
+                                <br>
+                                <p style="text-align: justify;">
+                                    Pour un bon appareil de mesure et par conséquent, la tension aux bornes du capteur est indépendante de l’appareil de mesure utilisé.
+                                    <br><br>
+                                    <h6 class="text-center">$vm = es (R_c/( R_s + R_1 + R_c)) $</h6>
+                                    <br><br>
+                                    <p style="text-align: justify;"> La tension vm n’est pas une fonction linéaire de Rc. <br> Exemple : <em> Le débit du ﬂuide exerce une force sur un clapet relié au curseur d’un potentiomètre. la tension en sortie du potentiomètre augmente avec la vitesse d’écoulement.</em>                                        </p><br><br>
+                                    <h6 class="text-center">$U = E ·( x·R)/ R = x·E $
+                                    </h6><br>
+                                    <figure class="figure text-center">
+                                        <img src="images/capteurs 2020/Capture3.PNG" class="figure-img img-fluid rounded" alt="...">
+                                        <figcaption class="figure-caption">.</figcaption>
+                                    </figure>
+                                </p>
+                                <p style="text-align: justify;">
+                                    <strong>Linéarisation de la mesure</strong> <br> - On souhaite que la variation ∆vm de la tension mesurée soit proportionnelle à la variation ∆Rc de la résistance du capteur. Pour des petits signaux on a la solution
+                                    suivante. La résistance du capteur variant de $R_(c0) ⇒ R_(c0) + ∆R_c$, la tension vm passe de $v_(m0) ⇒ v_(m0) + ∆v_m$ <br>
+
+                                </p>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/Capture4.PNG" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">.</figcaption>
+                                </figure>
+                                <br>
+                                <h5>3.2.2 Remarque</h5>
+                                <br>
+                                <p style="text-align: justify;">
+                                    Le capteur à montage potentiométrique est utilisé dans les mesures de déplacement rectiligne (potentiomètre rectiligne), les mesures d’angle de rotation, mesure de débit de fluide, ... Il a un faible coût et a aussi l’avantage d’être simple d’utilisation.
+                                    L’inconvénient majeur du montage potentiométrique est sa sensibilité aux dérive de la sources et aux parasites.
+
+                                </p>
+                                <br>
+
+                                <h3>3.3 Les ponts</h3>
+                                <br>
+                                <p style="text-align: justify;">
+                                    Un pont est un potentiomètre double avec mesure différentielle de tension qui la rend moins sensible aux bruits et dérives de la source. Exemple d’un pont résistif (voir figure 3.6). Un parasite ou une fluctuation ∆e s’ajoutant à la f.é.m. es0 de la source;
+                                    les potentiels aux extrémités A et B de la diagonale de mesure :
+                                </p>
+                                <br>
+                                <h6 class="text-center">$vA = e_(s0) ((R_(c0) + ∆R_c)/ (R_1 + R_(c0) + ∆R_c)) + ∆e ((R_(c0) + ∆R_c ) /(R_1 + R_(c0) + ∆R_c))$</h6> <br><br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/fig3.6.jpg" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">Figure 3.6 – Pont résistif : influence des fluctuations de la tension d’alimentation.</figcaption>
+                                </figure>
+                                <br><br>
+                                <h6 class="text-center">
+                                    $vB = e_(s0) (R_4 /(R_3 + R_4)) + ∆_e (R_4 /(R_3 + R_4))$
+                                </h6>
+                                <br><br>
+                                <p style="text-align: justify;">Le pont est initialement équilibré :</p>
+                                <br>
+                                <br>
+                                <h6 class="text-center">$R_(co) /(R_1 + R_(c0)) = R_4 /(R_3 + R_4)$</h6>
+                                <br>
+                                <br>
+                                <p style="text-align: justify;">
+                                    La tension de mesure vm qui est la tension diﬀérentielle VA −VB a pour expression : <br><br> $vm = e_(s0)(1 +(( ∆e) /(es0))).( (R_1.(∆R_c))/( (R1 + Rc0 + ∆Rc)(R1 + Rc0)))$ <br><br> La comparaison avec le montage potentiométrique
+                                    montre que l’inﬂuence de la ﬂuctuation ∆e sur la tension de mesure est considérablement réduite dans le montage en pont dès lors que ∆Rc Rc0. <br> <strong>Exemple :</strong> <br> <em>Dans le circuit, le capteur est une
+                                        jauge d’extensiométrie dont la résistance varie avec la contrainte (mécanique).</em>
+                                </p>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/fig3.7.jpg" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">Figure 3.7 – Capteur à montage à pont dans la mesure de la force.</figcaption>
+                                </figure>
+                                <br>
+                                <p style="text-align: justify;">
+                                    $V = E · (∆R/ (4R_0 + ∆R))$ soit encore, sachant que $∆R
+                                    <=R 0, V=E · ((∆R) /(4R_0))$ <br> En eﬀet, sachant que la déformation du conducteur (jauge) modiﬁe la longueur l et donc R $(R = ρ· (l /s)) $ $(voir ﬁgure 3.8)$, on a la relation générale : <br><br> $∆R/ R_0 = K · ((∆l)/ l ) $ <br><br> <em>Où $K$ est le facteur de jauge</em>
+                                </p>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/fig3.8.jpg" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">Figure 3.8 – Capteur à jauge d’extensiométrie.</figcaption>
+                                </figure>
+                                <br>
+                                <h5>3.3.1 Mesure des résistances-pont de Wheatstone</h5>
+                                <br>
+                                <p style="text-align: justify;">
+                                    La structure générale du pont de Wheatstone est représentée à la figure 3.9; es et Rs caractérisent la source, Rd est la résistance du dispositif de détection de l’équilibre du pont ou de mesure de son déséquilibre. Les équations de Kirchhoff permettent
+                                    de calculer le courant id : Le pont est dit équilibré lorsque $v_A = v_B$ ; id est alors nul ce qui correspond à la condition classique : <br><br>
+                                    <h6 class="text-center">
+                                        $i_d = es. ( ((R_2R_3) −R_1R_4 )/[R_1R_4 (R_2 + R_3) + R_2R_3 (R_1 + R_4) + R_s (R_1 + R_3)(R_2 + R_4) + R_d (R_1 + R_2)(R_3 + R_4) + R_sR_d (R_1 )$ <br><br>
+                                    </h6>
+                                </p>
+                                <p style="text-align: justify;">
+                                    Le pont est dit équilibré lorsque $v_A = v_B$ ; $i_d$ est alors nul ce qui correspond à la condition classique
+                                </p>
+                                <br>
+                                <figure class="figure text-center">
+                                    <img src="images/capteurs 2020/fig3.9.jpg" class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">Figure 3.9 – Pont de Wheatstone : structure générale. <br> $R_2R_3 = R_1R_4$
+                                    </figcaption>
+                                </figure>
+                                <br>
+                                <p style="text-align: justify;">
+                                    La condition d’équilibre ne dépend que des résistances du pont : elle est indépendante des résistances de la source et du détecteur de déséquilibre. <br> <strong>Tension de déséquilibre </strong><br> Le pont est généralement
+                                    alimenté par une source dont la résistance Rs est faible : $Rs
+                                    << R_1;R_2;R_3;R_4;R_d$ En faisant $R_s=0 $ dans l’expression de $id$, celle-ci se simpliﬁe : </p>
+                                        <br>
+                                        <figure class="figure text-center">
+                                            <img src="images/capteurs 2020/Capture5.PNG" class="figure-img img-fluid rounded" alt="...">
+                                            <figcaption class="figure-caption"></figcaption>
+                                        </figure>
+                                        <br>
+                                        <h3>3.3.2 Remarque</h3>
+                                        <br>
+                                        <p style="text-align: justify;">
+                                            Etant un potentiomètre double sa sensibilité est maximale, comparée à celle d’un simple potentiomètre. Dans certains cas simple on choisit très souvent les résistances pour qu’à l’équilibre elles soient toutes égales : <br><br>
+                                            <h6 class="text-center">$R_1 = R_2 = R_3 = R_4 = R_0$ </h6>
+                                            <br><br>
+                                        </p>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-8 col-md-5 col-lg-4 col-xl-3 offset-xl-1 offset-0 pl-xl-0 sidebar">
+                    <!-- <div class="widget">
+                        <form class="search-widget">
+                            <input type="text" placeholder="Rechercher...">
+                            <button><i class="ti-search"></i></button>
+                        </form>
+                    </div> -->
+
+                    <div class="widget own">
+                        <div class="recent-post-widget">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Collapsible Group Item #1
+                                      </button>
+                                        </h2>
+                                    </div>
+
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                                            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Collapsible Group Item #2
+                                      </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                                            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Collapsible Group Item #3
+                                      </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                                            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </div>
+
+    <footer class="footer-section">
+        <div class="copyright">
+            <div class="container">
+                <p>Copyright ©2020 Tous droits reservés </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        MathJax = {
+            loader: {
+                load: ['input/asciimath', 'output/chtml']
+            },
+            asciimath: {
+                delimiters: [
+                    ['$', '$'],
+                    ['`', '`']
+                ]
+            }
+        }
+    </script>
+
+    <script src="mathjax/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <script src="js/jquery-3.2.1.min.js "></script>
+    <script src="js/main.js "></script>
+    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

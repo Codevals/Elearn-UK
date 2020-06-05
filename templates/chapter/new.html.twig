@@ -1,0 +1,19 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}New Chapter{% endblock %}
+
+{% block body %}
+    <div class="box">
+        <div class="box-header">
+            <h3>Nouveau Chapitre - Cours: <span class="text-danger">{{ course.titre }}</span></h3>
+        </div>
+        <div class="box-body">
+            {{ include('chapter/_form.html.twig') }}
+        </div>
+        <div class="box-footer">
+            <a href="{{ path('chapter_index', {'id': course.id, 'slug': course.slug}) }}" class="btn btn-info btn-xs pull-right">
+                Liste
+            </a>
+        </div>
+    </div>
+{% endblock %}

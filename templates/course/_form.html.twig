@@ -1,0 +1,29 @@
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-4">
+            {{ form_row(form.titre) }}
+        </div>
+        <div class="col-md-2">
+            {{ form_row(form.etablissement) }}
+        </div>
+        <div class="col-md-3">
+            {{ form_row(form.cycles) }}
+        </div>
+        <div class="col-md-2">
+            {{ form_row(form.semestre) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            {{ form_row(form.specialites) }}
+        </div>
+        <div class="col-md-2">
+            {{ form_row(form.documentFile) }}
+        </div>
+    </div><div class="row">
+        <div class="col-md-11">
+            {{ form_row(form.description) }}
+        </div>
+    </div>
+    <button class="btn btn-primary pull-left">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}
